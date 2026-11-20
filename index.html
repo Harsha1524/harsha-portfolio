@@ -160,7 +160,7 @@ footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:14px}
 @media(max-width:900px){.hero .wrap,.job.feat,.contact .box{grid-template-columns:minmax(0,1fr)}.contact .cta{justify-content:flex-start}.pola{max-width:380px}}
 @media(max-width:720px){.xp,.pors{grid-template-columns:minmax(0,1fr)}nav a.l{display:none}.st1{left:-3%}.st2{right:-3%}.st3{left:-2%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-</style>
+html{overflow-x:clip}.hero h1 span{-webkit-text-stroke:0;text-shadow:4px 4px 0 var(--edge)}.xp{grid-template-columns:repeat(6,minmax(0,1fr))}.xp>.job{grid-column:span 2}.xp>.job.feat,.xp>.job:nth-child(2){grid-column:1/-1}.xp>.job:nth-child(2){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-areas:"h l" "s l" "t l";column-gap:32px;align-items:start}.xp>.job:nth-child(2)>.jh{grid-area:h}.xp>.job:nth-child(2)>.stat{grid-area:s}.xp>.job:nth-child(2)>ul{grid-area:l;align-self:center}.xp>.job:nth-child(2)>.tags{grid-area:t}.xp>.job:nth-child(n+4) .lg{font-size:12.5px}.por .big{bottom:auto;top:14px;right:18px;font-size:64px;opacity:.07}.por .nums,.por .tags{margin-top:auto}.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.ach{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:1000px){.ach{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:900px){.xp>.job:nth-child(2){grid-template-columns:minmax(0,1fr);grid-template-areas:"h" "s" "l" "t"}}@media(max-width:720px){.xp>.job{grid-column:1/-1}.ach,.nums{grid-template-columns:minmax(0,1fr)}}</style>
 </head>
 <body>
 <nav><div class="in">
@@ -277,7 +277,7 @@ footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:14px}
       <div class="lg" style="background:var(--lime)">TH</div>
       <div><h3>Hostel Legislator</h3><div class="at">Tapti Hostel · IIT Madras</div></div>
       <p>Elected to represent Tapti Hostel in student governance: carrying residents' issues to the legislature and helping shape hostel and institute policy.</p>
-      <span class="big" aria-hidden="true">TAPTI</span>
+      <div class="tags"><span>Elected</span><span>Student governance</span><span>Tapti Hostel</span></div><span class="big" aria-hidden="true">TAPTI</span>
     </article>
     <article class="box por">
       <div class="lg" style="background:var(--pink)">N</div>
