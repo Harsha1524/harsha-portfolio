@@ -415,13 +415,13 @@ const T=[
   {t:'Mini Redis: In-Memory Key-Value Store',y:'Self',by:'Jan 2026',b:['TCP server implementing a simplified Redis clone.','Custom hash map and LRU eviction built from a doubly linked list and a hash map.'],g:['C++','TCP','Data structures']},
   {t:'Library Management System',y:'Self',by:'Apr 2025',b:['Object-oriented design with modular classes for books, members and transactions.','Issue/return tracking and fine calculation through inheritance and polymorphism.'],g:['OOP','C++']}
  ]},
- {name:'Data & ML',bg:'var(--lime)',blurb:'Vision, NLP, LLMs and GenAI products.',p:[
+ {name:'Data & ML',bg:'var(--lime)',blurb:'Vision, NLP and LLM pipelines.',p:[
   {t:'AI-Based PPE Compliance Detection',y:'Course',by:'Prof. G. L. Samuel · 2026',w:1,b:['End-to-end computer vision pipeline that detects PPE violations and tracks workers in real time.','Automated logging, debouncing and analytics to cut false positives.'],g:['YOLOv8','OpenCV','Tracking']},
   {t:'NL2SQL Business Intelligence Agent',y:'Self',by:'AWS Bedrock',b:['Modular natural-language-to-SQL pipeline across relational data stores.','LLM domain classification and entity resolution; reusable LLM and RDBMS facades with SQLite execution and structured tests.'],g:['LLMs','AWS Bedrock','SQL']},
   {t:'English to Telugu Translation',y:'Self',by:'Transformer',b:['Transformer encoder-decoder trained on the OPUS-100 corpus.','BPE tokenisation, positional encoding, multi-head attention, six stacked encoder blocks.'],g:['Transformers','PyTorch','NLP']},
   {t:'Real-Time Hand Gesture Recognition',y:'Self',by:'Computer vision',k:'~81% accuracy, 6 classes',b:['Pre-processed 1.2k+ images with skin segmentation, morphology and normalisation.','HOG features with a linear classifier, validated with a confusion matrix.'],g:['OpenCV','HOG','scikit-learn']},
   {t:'Next-Word Prediction',y:'Self',by:'NLP',b:['LSTM encoder-decoder for smooth inline autocompletion.','Tokenisation, seq2seq generation and one-hot encoding.'],g:['LSTM','TensorFlow']},
-  a
+//
  ]}
 ];
 document.getElementById('ptracks').innerHTML=T.map(tr=>'<div class="track"><div class="th"><h3 style="background:'+tr.bg+'">'+esc(tr.name)+'</h3><p>'+esc(tr.blurb)+'</p><span class="n">'+tr.p.length+' projects</span></div><div class="pg">'+tr.p.map(p=>'<article class="box pc"><div class="meta"><span class="pill" style="background:'+TY[p.y]+'">'+p.y+'</span><span class="by">'+esc(p.by)+'</span>'+(p.w?'<span class="wip">in progress</span>':'')+'</div><h3>'+esc(p.t)+'</h3>'+(p.k?'<span class="kpi" style="background:'+tr.bg+'">'+esc(p.k)+'</span>':'')+'<ul>'+p.b.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><div class="tags">'+p.g.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div></article>').join('')+'</div></div>').join('');
