@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Harsha · IIT Madras</title>
-<meta name="description" content="Harsha — student at IIT Madras. Mechanical engineering, software and data: digital twins, CAD automation, full-stack and ML.">
+<meta name="description" content="Kandhi Harsha Vardhan Reddy — student at IIT Madras working across core engineering, software, data and product.">
 <meta property="og:title" content="Harsha · Student at IIT Madras">
-<meta property="og:description" content="Mechanical engineer who ships code. Digital twins, CAD automation, full-stack and data.">
+<meta property="og:description" content="Core engineering, software, data and product. Bajaj Auto design automation: 2 days to 2 minutes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-/* VOICE: gen-z zine. Loud, warm, confident, a bit cheeky, still easy to scan for a recruiter.
+/* VOICE: gen-z zine. Loud, warm, confident, still easy for a recruiter to scan.
    IDEA: a sticker-bombed notebook page. Thick ink outlines, hard offset shadows, tilted stickers, a ticker tape.
-   PICTURE: the photo in a tilted polaroid frame with stickers slapped on it; the cream wall in the photo is the page colour.
-   COLOUR and TYPE: warm paper, near-black ink, acid lime as the highlighter, hot pink, tangerine and lilac for the three tracks. Unbounded + DM Sans.
-   LAYOUT: sticky pill nav, hero (copy + polaroid), ticker, experience, three project tracks, PORs, achievements, contact. */
+   PICTURE: the photo in a tilted polaroid with stickers; the cream wall in the photo is the page colour.
+   COLOUR and TYPE: warm paper, near-black ink; four track colours: tangerine core, lilac SDE, lime DA, pink product. Unbounded + DM Sans.
+   LAYOUT: nav, hero, ticker, four tracks, experience (Bajaj first), projects in three tracks, POR timeline, extracurriculars, contact. */
 :root{color-scheme:light dark;
   --bg:light-dark(#f3ecdf,#14120f);--card:light-dark(#fffaf1,#1f1c18);
   --ink:light-dark(#151311,#f3ecdf);--soft:light-dark(#5b544b,#b8ae9f);
@@ -24,21 +24,24 @@
   --onacc:#151311;--sh:5px 5px 0 var(--edge)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
+html{scroll-behavior:smooth;scroll-padding-top:90px;overflow-x:clip}
 body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:clip}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:-1;
   background-image:radial-gradient(color-mix(in srgb,var(--ink) 13%,transparent) 1px,transparent 1.2px);background-size:22px 22px}
 a{color:inherit}
 img{display:block;max-width:100%}
-h1,h2,h3{margin:0;font-family:Unbounded,system-ui,sans-serif;line-height:1.05;text-wrap:balance}
+h1,h2,h3,h4{margin:0;font-family:Unbounded,system-ui,sans-serif;line-height:1.1;text-wrap:balance}
 h2{font-size:clamp(30px,4.6vw,52px);font-weight:900;letter-spacing:-.02em}
-h3{font-size:18px;font-weight:700;line-height:1.2}
+h3{font-size:18px;font-weight:700}
+h4{font-size:15px;font-weight:700}
 p{margin:0}
+ul{margin:0;padding-left:19px}
+li{margin:5px 0}
 .wrap{max-width:1200px;margin:0 auto;padding:0 max(4vw,16px)}
-section{padding:clamp(48px,7vw,96px) 0}
+section{padding:clamp(52px,7vw,96px) 0}
 .kick{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;border:2px solid var(--edge);border-radius:999px;padding:4px 12px;background:var(--card);margin-bottom:14px}
 .kick i{width:9px;height:9px;border-radius:50%;background:var(--tang);display:inline-block}
-.sub{color:var(--soft);max-width:60ch;margin-top:12px;font-size:17px}
+.sub{color:var(--soft);max-width:62ch;margin-top:12px;font-size:17px}
 .mark{background:linear-gradient(transparent 12%,var(--lime) 12%,var(--lime) 88%,transparent 88%);color:var(--onacc);padding:0 .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .box{background:var(--card);border:2.5px solid var(--edge);border-radius:18px;box-shadow:var(--sh)}
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border:2.5px solid var(--edge);border-radius:999px;font-weight:700;text-decoration:none;background:var(--card);box-shadow:4px 4px 0 var(--edge);transition:transform .15s,box-shadow .15s}
@@ -46,319 +49,398 @@ section{padding:clamp(48px,7vw,96px) 0}
 .btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--edge)}
 .btn.go{background:var(--lime);color:var(--onacc)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:13px;font-weight:600;border:1.5px solid var(--edge);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.lg{flex:none;width:58px;height:58px;border:2.5px solid var(--edge);border-radius:14px;display:grid;place-items:center;font-family:Unbounded,sans-serif;font-weight:900;font-size:14px;color:var(--onacc);letter-spacing:-.02em;text-align:center;line-height:1}
+.lg.s{font-size:11.5px}
+.when{font-size:13.5px;font-weight:700;color:var(--soft);white-space:nowrap}
+.pill{display:inline-block;font-size:12.5px;font-weight:700;border:2px solid var(--edge);border-radius:999px;padding:1px 10px;color:var(--onacc);white-space:nowrap}
 
 /* nav */
 nav{position:sticky;top:12px;z-index:20;margin:12px auto 0;max-width:1200px;padding:0 max(4vw,16px)}
-nav .in{display:flex;align-items:center;gap:4px;flex-wrap:wrap;background:var(--card);border:2.5px solid var(--edge);border-radius:999px;padding:6px 6px 6px 18px;box-shadow:4px 4px 0 var(--edge)}
+nav .in{display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--card);border:2.5px solid var(--edge);border-radius:999px;padding:6px 6px 6px 18px;box-shadow:4px 4px 0 var(--edge)}
 .logo{font-family:Unbounded,sans-serif;font-weight:900;font-size:19px;text-decoration:none;margin-right:auto}
 .logo b{color:var(--tang)}
-nav a.l{text-decoration:none;font-weight:600;font-size:15px;padding:9px 12px;border-radius:999px}
+nav a.l{text-decoration:none;font-weight:600;font-size:15px;padding:9px 11px;border-radius:999px}
 nav a.l:hover{background:var(--lime);color:var(--onacc)}
 nav .btn{min-height:40px;padding:0 16px;box-shadow:none;font-size:14.5px}
 
 /* hero */
 .hero{padding-top:clamp(36px,6vw,80px)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.hero .top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
 .badge{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--onacc);border:2.5px solid var(--edge);border-radius:14px;padding:10px 16px;font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(17px,2.2vw,24px);box-shadow:var(--sh);transform:rotate(-2deg)}
 .badge svg{flex:none}
-.hero h1{font-size:clamp(46px,8vw,104px);font-weight:900;letter-spacing:-.03em;margin-top:26px}
-.hero h1 span{color:var(--pink);-webkit-text-stroke:2px var(--edge)}
-.hero .sub{font-size:clamp(17px,1.6vw,19px);margin-top:18px;color:var(--ink)}
+.hero h1{font-size:clamp(46px,8vw,100px);font-weight:900;letter-spacing:-.03em;margin-top:26px}
+.hero h1 span{color:var(--pink);text-shadow:4px 4px 0 var(--edge)}
+.fullname{font-weight:700;color:var(--soft);margin-top:10px;font-size:15px}
+.hero .sub{font-size:clamp(17px,1.6vw,19px);margin-top:16px;color:var(--ink)}
 .hero .sub em{font-style:normal;font-weight:700}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.chip{border:2px solid var(--edge);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:600;background:var(--card);white-space:nowrap}
+.chip{border:2px solid var(--edge);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:700;color:var(--onacc);white-space:nowrap}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-
-.pola{position:relative;justify-self:center;width:min(100%,420px);transform:rotate(2.5deg)}
+.pola{position:relative;justify-self:center;width:min(100%,410px);transform:rotate(2.5deg)}
 .pola .frame{background:var(--card);border:2.5px solid var(--edge);border-radius:20px;padding:14px 14px 58px;box-shadow:10px 10px 0 var(--edge)}
 .pola .ph{aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:2px solid var(--edge);background:#efe6d3}
-.pola .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;filter:saturate(1.05) contrast(1.03)}
-.pola .cap{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-family:Unbounded,sans-serif;font-weight:700;font-size:16px}
+.pola .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.pola .cap{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px}
 .st{position:absolute;border:2.5px solid var(--edge);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px;color:var(--onacc);box-shadow:3px 3px 0 var(--edge);white-space:nowrap}
-.st1{background:var(--pink);top:6%;left:-9%;transform:rotate(-10deg)}
-.st2{background:var(--lilac);top:44%;right:-10%;transform:rotate(8deg)}
-.st3{background:var(--sky);bottom:20%;left:-7%;transform:rotate(-4deg)}
+.st1{background:var(--sky);top:6%;left:-10%;transform:rotate(-9deg)}
+.st2{background:var(--lilac);top:45%;right:-11%;transform:rotate(8deg)}
+.st3{background:var(--pink);bottom:21%;left:-8%;transform:rotate(-4deg)}
 .star{position:absolute;top:-26px;right:-18px;width:74px;height:74px;animation:spin 14s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* ticker */
-.tick{margin-top:clamp(40px,6vw,72px);background:var(--ink);color:var(--bg);border-block:2.5px solid var(--edge);overflow:hidden;transform:rotate(-1.2deg);width:104%;margin-left:-2%}
-.tick .tr{display:flex;width:max-content;animation:roll 32s linear infinite}
+.tick{margin-top:clamp(44px,6vw,76px);background:var(--ink);color:var(--bg);border-block:2.5px solid var(--edge);overflow:hidden;transform:rotate(-1.2deg);width:104%;margin-left:-2%}
+.tick .tr{display:flex;width:max-content;animation:roll 34s linear infinite}
 .tick span{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(15px,1.8vw,20px);padding:14px 22px;white-space:nowrap;display:flex;align-items:center;gap:22px}
 .tick span::after{content:"";width:12px;height:12px;background:var(--lime);border-radius:3px;transform:rotate(45deg)}
 @keyframes roll{to{transform:translateX(-50%)}}
 
+/* tracks */
+.tracks4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:34px}
+.t4{padding:22px;display:flex;flex-direction:column;gap:12px}
+.t4 .hd{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.t4 h3{font-size:21px;font-weight:900}
+.t4 .num{width:34px;height:34px;border:2.5px solid var(--edge);border-radius:10px;display:grid;place-items:center;font-family:Unbounded,sans-serif;font-weight:900;font-size:14px;color:var(--onacc)}
+.t4 p{color:var(--soft);font-size:15px}
+.t4 .proof{font-weight:700;font-size:14.5px;border-top:2px dashed color-mix(in srgb,var(--ink) 30%,transparent);padding-top:10px;margin-top:auto}
+
 /* experience */
-.xp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:36px}
-.job{padding:22px;display:flex;flex-direction:column;gap:14px}
-.job.feat{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px;align-items:stretch}
+.xp{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px;margin-top:36px}
+.job{grid-column:span 2;padding:22px;display:flex;flex-direction:column;gap:12px}
+.job.half{grid-column:span 3}
+.job.full{grid-column:1/-1}
 .jh{display:flex;gap:14px;align-items:center}
-.lg{flex:none;width:58px;height:58px;border:2.5px solid var(--edge);border-radius:14px;display:grid;place-items:center;font-family:Unbounded,sans-serif;font-weight:900;font-size:15px;color:var(--onacc);letter-spacing:-.02em}
 .jh .org{font-family:Unbounded,sans-serif;font-weight:700;font-size:18px;line-height:1.2}
 .jh .role{color:var(--soft);font-size:14.5px;margin-top:2px}
-.job ul{margin:0;padding-left:20px;color:var(--soft)}
-.job li{margin:4px 0}
+.jh .when{margin-left:auto;align-self:flex-start}
+.job ul{color:var(--soft)}
 .job li strong{color:var(--ink)}
-.stat{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(26px,3.4vw,40px);line-height:1}
+.job .tags{margin-top:auto}
+.feat-top{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between}
+.stat{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(26px,3.6vw,44px);line-height:1}
 .stat s{text-decoration-thickness:4px;text-decoration-color:var(--pink);color:var(--soft);font-weight:700}
-.stat b{background:var(--lime);color:var(--onacc);border:2.5px solid var(--edge);border-radius:12px;padding:4px 10px}
-.layers{display:grid;gap:10px;background:var(--bg);border:2.5px solid var(--edge);border-radius:14px;padding:16px}
+.stat b{background:var(--lime);color:var(--onacc);border:2.5px solid var(--edge);border-radius:12px;padding:6px 12px;box-shadow:4px 4px 0 var(--edge)}
+.stat small{font-family:"DM Sans",sans-serif;font-size:14px;font-weight:700;color:var(--soft);flex-basis:100%}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:f}
+.flow div{border:2px solid var(--edge);border-radius:14px;padding:14px;background:var(--bg);display:flex;flex-direction:column;gap:6px}
+.flow h4{display:flex;align-items:center;gap:8px}
+.flow h4::before{counter-increment:f;content:counter(f);flex:none;width:24px;height:24px;border:2px solid var(--edge);border-radius:7px;display:grid;place-items:center;font-size:12px;background:var(--lime);color:var(--onacc)}
+.flow p{color:var(--soft);font-size:14.5px}
+.btp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.layers{display:grid;gap:10px;background:var(--bg);border:2.5px solid var(--edge);border-radius:14px;padding:16px;align-content:center}
 .layers div{display:flex;align-items:center;gap:12px;border:2px solid var(--edge);border-radius:10px;padding:10px 12px;background:var(--card);font-weight:600;font-size:15px}
-.layers div i{flex:none;width:26px;height:26px;border-radius:7px;border:2px solid var(--edge);display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:700;color:var(--onacc)}
+.layers i{flex:none;width:26px;height:26px;border-radius:7px;border:2px solid var(--edge);display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:700;color:var(--onacc)}
 .layers small{display:block;color:var(--soft);font-weight:500;font-size:13px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
-.tags span{font-size:13px;font-weight:600;border:1.5px solid var(--edge);border-radius:999px;padding:2px 10px;white-space:nowrap}
 
 /* projects */
-.ph-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:18px}
-.seg{display:inline-flex;border:2.5px solid var(--edge);border-radius:999px;background:var(--card);padding:4px;box-shadow:4px 4px 0 var(--edge)}
-.seg button{min-height:40px;padding:0 16px;border:0;border-radius:999px;background:none;color:var(--ink);font:700 14.5px "DM Sans",sans-serif;cursor:pointer}
-.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
-.track{margin-top:44px}
+.track{margin-top:46px}
 .th{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.th h3{font-size:clamp(22px,2.6vw,30px);font-weight:900;border:2.5px solid var(--edge);border-radius:14px;padding:8px 16px;color:var(--onacc);box-shadow:4px 4px 0 var(--edge)}
+.th h3{font-size:clamp(21px,2.6vw,30px);font-weight:900;border:2.5px solid var(--edge);border-radius:14px;padding:8px 16px;color:var(--onacc);box-shadow:4px 4px 0 var(--edge)}
 .th p{color:var(--soft);font-size:15px}
 .th .n{margin-left:auto;font-weight:700;font-size:14px;color:var(--soft)}
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,265px),1fr));gap:18px;margin-top:20px}
+.pg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
 .pc{position:relative;padding:20px 18px 18px;display:flex;flex-direction:column;gap:10px;border-radius:16px;transition:transform .18s,box-shadow .18s}
-.pc:hover{transform:translate(-3px,-3px) rotate(-.4deg);box-shadow:8px 8px 0 var(--edge)}
-.pc .ty{align-self:flex-start;font-size:12.5px;font-weight:700;border:2px solid var(--edge);border-radius:999px;padding:1px 10px;color:var(--onacc)}
-.pc p{color:var(--soft);font-size:15px}
-.pc .wip{position:absolute;top:18px;right:16px;font-size:12.5px;font-weight:700;color:var(--tang)}
-.empty{color:var(--soft);font-weight:600;padding:18px;border:2px dashed var(--soft);border-radius:14px}
+.pc:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--edge)}
+.pc .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pc .by{font-size:13px;color:var(--soft);font-weight:600}
+.pc .wip{margin-left:auto;font-size:12.5px;font-weight:700;color:var(--tang);white-space:nowrap}
+.pc ul{color:var(--soft);font-size:14.5px}
+.pc .kpi{align-self:flex-start;font-family:Unbounded,sans-serif;font-weight:700;font-size:14px;border:2px solid var(--edge);border-radius:10px;padding:4px 10px;color:var(--onacc)}
+.pc .tags{margin-top:auto;padding-top:4px}
 
-/* PORs */
-.pors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:36px}
-.por{padding:26px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
-.por .lg{width:72px;height:72px;font-size:20px;border-radius:18px}
-.por h3{font-size:clamp(20px,2.2vw,26px);font-weight:900}
-.por .at{color:var(--soft);font-weight:600}
-.por p{color:var(--soft)}
-.por .big{position:absolute;right:-10px;bottom:-34px;font-family:Unbounded,sans-serif;font-weight:900;font-size:120px;line-height:1;opacity:.08;pointer-events:none}
-.nums{display:flex;flex-wrap:wrap;gap:10px}
-.nums div{border:2px solid var(--edge);border-radius:12px;padding:8px 12px;background:var(--bg)}
-.nums b{display:block;font-family:Unbounded,sans-serif;font-size:22px;line-height:1.1}
-.nums span{font-size:13px;color:var(--soft)}
+/* POR timeline */
+.tl{position:relative;margin-top:40px;display:grid;gap:34px}
+.yr{display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;position:relative}
+.yr::before{content:"";position:absolute;left:74px;top:56px;bottom:-34px;width:3px;background:var(--edge);opacity:.25}
+.yr:last-child::before{display:none}
+.ylab{position:sticky;top:96px;align-self:start;text-align:center}
+.ylab b{display:inline-block;font-family:Unbounded,sans-serif;font-weight:900;font-size:18px;border:2.5px solid var(--edge);border-radius:14px;padding:10px 12px;background:var(--lime);color:var(--onacc);box-shadow:4px 4px 0 var(--edge)}
+.ylab span{display:block;font-size:13px;font-weight:700;color:var(--soft);margin-top:8px}
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.roles.one{grid-template-columns:minmax(0,1fr)}
+.por{padding:22px;display:flex;flex-direction:column;gap:12px}
+.por ul{color:var(--soft);font-size:15px}
+.nums{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.nums div{border:2px solid var(--edge);border-radius:12px;padding:6px 10px;background:var(--bg)}
+.nums b{display:block;font-family:Unbounded,sans-serif;font-size:18px;line-height:1.15}
+.nums span{font-size:12.5px;color:var(--soft);font-weight:600}
 
-/* achievements */
-.ach{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:18px;margin-top:36px}
-.ac{padding:22px;display:flex;flex-direction:column;gap:8px;border-radius:18px}
-.ac:nth-child(odd){transform:rotate(-1deg)}.ac:nth-child(even){transform:rotate(1deg)}
-.ac .ic{width:46px;height:46px;border:2.5px solid var(--edge);border-radius:12px;display:grid;place-items:center;margin-bottom:6px}
-.ac b{font-family:Unbounded,sans-serif;font-size:clamp(28px,3vw,36px);line-height:1}
-.ac p{color:var(--soft);font-size:15px}
+/* extracurricular */
+.vb{margin-top:36px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;overflow:hidden;padding:0}
+.vb .l{background:var(--tang);color:var(--onacc);padding:clamp(24px,4vw,40px);border-right:2.5px solid var(--edge);position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px}
+.vb .l h3{font-size:clamp(28px,4vw,46px);font-weight:900;line-height:1}
+.vb .l p{font-weight:600;max-width:40ch}
+.vb .l svg{position:absolute;right:-40px;bottom:-40px;width:220px;height:220px;opacity:.9}
+.vb .r{padding:clamp(20px,3vw,32px);display:grid;gap:12px;align-content:center}
+.medal{display:flex;gap:14px;align-items:center;border:2px solid var(--edge);border-radius:14px;padding:12px 14px;background:var(--bg)}
+.medal .m{flex:none;min-width:64px;height:48px;padding:0 8px;border:2.5px solid var(--edge);border-radius:12px;display:grid;place-items:center;font-family:Unbounded,sans-serif;font-weight:900;font-size:15px;color:var(--onacc)}
+.medal b{display:block;line-height:1.25}
+.medal span{font-size:14px;color:var(--soft)}
+.ach{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:22px}
+.ac{padding:20px;display:flex;flex-direction:column;gap:8px}
+.ac b{font-family:Unbounded,sans-serif;font-size:clamp(20px,2vw,25px);line-height:1.1;overflow-wrap:anywhere}
+.ac p{color:var(--soft);font-size:14.5px}
+.ac .ic{width:42px;height:42px;border:2.5px solid var(--edge);border-radius:12px;display:grid;place-items:center;margin-bottom:4px}
 
 /* contact */
 .contact .box{padding:clamp(28px,5vw,56px);background:var(--pink);color:var(--onacc);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:center}
-.contact h2{font-size:clamp(34px,5.4vw,64px)}
+.contact h2{font-size:clamp(34px,5.4vw,62px)}
 .contact p{margin-top:12px;font-size:17px;max-width:46ch}
 .contact .cta{margin:0;justify-content:flex-end}
 .contact .btn{background:#fffaf1;color:var(--onacc);border-color:#151311;box-shadow:4px 4px 0 #151311}
-.contact .btn.go{background:var(--lime)}
+.contact .btn.go{background:var(--lime)}.contact .btn.mail{font-size:14.5px;overflow-wrap:anywhere;min-height:48px;height:auto;padding:8px 18px}
 footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:14px}
 
-@media(max-width:900px){.hero .wrap,.job.feat,.contact .box{grid-template-columns:minmax(0,1fr)}.contact .cta{justify-content:flex-start}.pola{max-width:380px}}
-@media(max-width:720px){.xp,.pors{grid-template-columns:minmax(0,1fr)}nav a.l{display:none}.st1{left:-3%}.st2{right:-3%}.st3{left:-2%}}
+@media(max-width:1020px){.tracks4,.ach{grid-template-columns:repeat(2,minmax(0,1fr))}.pg{grid-template-columns:repeat(2,minmax(0,1fr))}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.job,.job.half{grid-column:span 3}}
+@media(max-width:900px){.hero .top,.btp,.vb,.contact .box{grid-template-columns:minmax(0,1fr)}.vb .l{border-right:0;border-bottom:2.5px solid var(--edge)}.contact .cta{justify-content:flex-start}.pola{max-width:370px}.roles{grid-template-columns:minmax(0,1fr)}.yr{grid-template-columns:minmax(0,1fr);gap:14px}.yr::before{display:none}.ylab{position:static;text-align:left}.ylab span{display:inline;margin-left:10px}}
+@media(max-width:680px){nav a.l{display:none}.tracks4,.ach,.pg,.flow{grid-template-columns:minmax(0,1fr)}.job,.job.half{grid-column:1/-1}.st1{left:-3%}.st2{right:-3%}.st3{left:-2%}.jh{flex-wrap:wrap}.jh .when{margin-left:0;flex-basis:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-html{overflow-x:clip}.hero h1 span{-webkit-text-stroke:0;text-shadow:4px 4px 0 var(--edge)}.xp{grid-template-columns:repeat(6,minmax(0,1fr))}.xp>.job{grid-column:span 2}.xp>.job.feat,.xp>.job:nth-child(2){grid-column:1/-1}.xp>.job:nth-child(2){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-areas:"h l" "s l" "t l";column-gap:32px;align-items:start}.xp>.job:nth-child(2)>.jh{grid-area:h}.xp>.job:nth-child(2)>.stat{grid-area:s}.xp>.job:nth-child(2)>ul{grid-area:l;align-self:center}.xp>.job:nth-child(2)>.tags{grid-area:t}.xp>.job:nth-child(n+4) .lg{font-size:12.5px}.por .big{bottom:auto;top:14px;right:18px;font-size:64px;opacity:.07}.por .nums,.por .tags{margin-top:auto}.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.ach{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:1000px){.ach{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:900px){.xp>.job:nth-child(2){grid-template-columns:minmax(0,1fr);grid-template-areas:"h" "s" "l" "t"}}@media(max-width:720px){.xp>.job{grid-column:1/-1}.ach,.nums{grid-template-columns:minmax(0,1fr)}}.por .big{display:none}.ac b{font-size:clamp(22px,2.1vw,27px);overflow-wrap:anywhere}.xp>.job:nth-child(2)>.stat{font-size:clamp(24px,2.6vw,32px)}</style>
+</style>
 </head>
 <body>
 <nav><div class="in">
-  <a class="logo" href="#top">harsha<b>.</b></a>
+  <a class="logo" href="#top">Harsha<b>.</b></a>
   <a class="l" href="#work">Experience</a>
   <a class="l" href="#projects">Projects</a>
   <a class="l" href="#pors">PORs</a>
-  <a class="l" href="#extra">Extras</a>
+  <a class="l" href="#extra">Sports &amp; more</a>
   <a class="btn go" href="#contact">Say hi</a>
 </div></nav>
 
 <header class="hero" id="top">
-  <div class="wrap">
+  <div class="wrap top">
     <div>
       <div class="badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/><path d="M22 9v6"/></svg>Student @ IIT Madras</div>
       <h1>Hey, I'm <span>Harsha</span></h1>
-      <p class="sub">Third-year <em>Mechanical Engineering</em> undergrad who can't stop writing code. I build <span class="mark">digital twins for old machines</span>, automate CAD so engineers don't have to, and ship web and data projects on the side.</p>
+      <p class="fullname">Kandhi Harsha Vardhan Reddy · B.Tech, Mechanical Engineering · Class of 2027</p>
+      <p class="sub">I don't fit in one box. I've automated CAD at <em>Bajaj Auto</em>, I'm building a <em>digital twin</em> for my BTP, I ship <em>backends and ML pipelines</em>, and I've run <span class="mark">budgets, teams and fests</span> across campus.</p>
       <div class="chips">
-        <span class="chip">B.Tech · Mechanical</span>
-        <span class="chip">BTP · Digital Twin Lab</span>
-        <span class="chip">Hostel Legislator</span>
+        <span class="chip" style="background:var(--tang)">Core</span>
+        <span class="chip" style="background:var(--lilac)">SDE</span>
+        <span class="chip" style="background:var(--lime)">Data &amp; ML</span>
+        <span class="chip" style="background:var(--pink)">Product</span>
       </div>
       <div class="cta">
-        <a class="btn go" href="#projects">See my work</a>
+        <a class="btn go" href="#work">See my work</a>
         <a class="btn" href="https://www.linkedin.com/in/harsha1524" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a class="btn" href="https://github.com/Harsha1524" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn" href="mailto:harshavardhanreddy1524@gmail.com">Email ↗</a>
       </div>
     </div>
     <figure class="pola" style="margin:0">
       <div class="frame">
         <div class="ph"><img src="/_vercel/image?url=%2FMy%2520photo.png&w=828&q=80" onerror="this.onerror=null;this.src='My%20photo.png'" alt="Portrait of Harsha in a navy blazer and white shirt" width="828" height="1035"></div>
-        <figcaption class="cap">mech × code</figcaption>
+        <figcaption class="cap">core × code × data × product</figcaption>
       </div>
-      <span class="st st1">4 internships</span>
-      <span class="st st2">digital twins</span>
-      <span class="st st3">CAD automation</span>
+      <span class="st st1">Bajaj: 2 days → 2 min</span>
+      <span class="st st2">BTP: digital twin</span>
+      <span class="st st3">Inter-IIT volleyball</span>
       <svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 2 L58 38 L96 30 L64 52 L84 86 L50 64 L16 86 L36 52 L4 30 L42 38 Z" fill="var(--lime)" stroke="var(--edge)" stroke-width="4" stroke-linejoin="round"/></svg>
     </figure>
   </div>
   <div class="tick" aria-hidden="true"><div class="tr" id="tick"></div></div>
 </header>
 
+<section id="tracks"><div class="wrap">
+  <span class="kick"><i></i>What I do</span>
+  <h2>Four tracks, one person</h2>
+  <p class="sub">Equal parts engineer, developer, data person and organiser. Here's the proof for each.</p>
+  <div class="tracks4">
+    <article class="box t4"><div class="hd"><h3>Core</h3><span class="num" style="background:var(--tang)">01</span></div><p>Design, manufacturing and machines: CAD, simulation, machine design and shop-floor time at BHEL and Manjira.</p><div class="tags"><span>Solid Edge</span><span>SolidWorks</span><span>ANSYS</span><span>Tecnomatix</span></div><p class="proof">Bajaj tooling design: 2 days → 2 min</p></article>
+    <article class="box t4"><div class="hd"><h3>SDE</h3><span class="num" style="background:var(--lilac)">02</span></div><p>Backends, systems and full-stack apps: APIs, caching, databases and data structures built from scratch.</p><div class="tags"><span>Node.js</span><span>PostgreSQL</span><span>Redis</span><span>C++</span></div><p class="proof">Codeforces 1291 · CodeChef 1413</p></article>
+    <article class="box t4"><div class="hd"><h3>Data &amp; ML</h3><span class="num" style="background:var(--lime)">03</span></div><p>Computer vision, NLP and LLM pipelines, plus the analytics to make sense of them.</p><div class="tags"><span>PyTorch</span><span>YOLOv8</span><span>AWS Bedrock</span><span>Power BI</span></div><p class="proof">Natural-language-to-SQL agent on AWS Bedrock</p></article>
+    <article class="box t4"><div class="hd"><h3>Product</h3><span class="num" style="background:var(--pink)">04</span></div><p>User journeys, prioritisation and running things for real users: 11,000+ students, ₹12L+ budgets, brand deals.</p><div class="tags"><span>Wireframes</span><span>Prioritisation</span><span>Stakeholders</span></div><p class="proof">Negotiated KFC and Domino's onto campus</p></article>
+  </div>
+</div></section>
+
 <section id="work"><div class="wrap">
   <span class="kick"><i></i>Experience</span>
   <h2>Where I've put in the hours</h2>
-  <p class="sub">A research lab, a design office and three shop floors.</p>
+  <p class="sub">An automotive design office, a research lab, aerospace, heavy industry and a couple of software stints.</p>
   <div class="xp">
-    <article class="box job feat">
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <div class="jh"><div class="lg" style="background:var(--lime)">DT</div><div><div class="org">B.Tech Project · IIT Madras</div><div class="role">Digital Twin &amp; Autonomous Factory Lab · Prof. G. L. Samuel</div></div></div>
-        <h3 style="font-size:clamp(20px,2.4vw,26px)">Digital twin for a legacy CNC micro-milling machine</h3>
-        <ul>
-          <li>The machine runs an <strong>old Windows-based controller with no data interface</strong>. Step one is getting live data out of it at all.</li>
-          <li>Designing a <strong>four-layer twin</strong>, mapped from the research literature.</li>
-          <li>Aimed at real-time monitoring of an older machine without replacing its controller.</li>
-        </ul>
-        <div class="tags"><span>Digital twin</span><span>EKF</span><span>Data acquisition</span><span>Physics modelling</span><span>Research</span></div>
+
+    <article class="box job full">
+      <div class="feat-top">
+        <div class="jh"><div class="lg" style="background:var(--sky)">BAJAJ</div><div><div class="org">Bajaj Auto Ltd. · Summer Intern</div><div class="role">Manufacturing &amp; Automation Technology, Design Automation · Pune, on-site · May–Jul 2026</div></div></div>
+        <div class="stat"><s>2 days</s><span aria-hidden="true">→</span><b>2 min</b><small>design time per boring-bar variant, a 98%+ cut</small></div>
       </div>
-      <div class="layers" aria-label="Four layers of the digital twin">
-        <div><i style="background:var(--tang)">1</i><span>Data acquisition &amp; comms<small>pull signals off the legacy controller</small></span></div>
-        <div><i style="background:var(--pink)">2</i><span>Physics-based model<small>how the spindle and cut should behave</small></span></div>
-        <div><i style="background:var(--lilac)">3</i><span>Sensor fusion (EKF)<small>blend model and measurement into one state</small></span></div>
-        <div><i style="background:var(--lime)">4</i><span>Monitoring service<small>live state for the operator</small></span></div>
+      <p style="color:var(--soft);max-width:80ch">I owned a tooling problem from the shop floor to working software: found the bottleneck, automated the design work, then turned the script into a tool other engineers could actually use.</p>
+      <div class="flow">
+        <div><h4>Found the bottleneck</h4><p>Mapped the cylinder-block line (5 processes) and pinned fine boring as the bottleneck. Proposed automating boring-bar design across 20+ body variants and 7+ cartridge types.</p></div>
+        <div><h4>Automated the CAD</h4><p>VB.NET app on the Solid Edge COM API: parametric boring bars with HSK 63 shanks, pockets, angled planes and tapped holes, plus assembly mating with planar and axial constraints.</p></div>
+        <div><h4>Killed manual drafting</h4><p>PMI-based dimensioning and drawing sheets generated straight from the assembly, so every output looks the same.</p></div>
+        <div><h4>Made it a product</h4><p>Windows Forms GUI for non-technical users, a REST API layer, a PostgreSQL store for job history and variant versions, and unit and integration tests.</p></div>
+      </div>
+      <div class="tags"><span>VB.NET</span><span>Solid Edge COM API</span><span>Windows Forms</span><span>REST API</span><span>PostgreSQL</span><span>Testing</span></div>
+    </article>
+
+    <article class="box job full">
+      <div class="btp">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="jh"><div class="lg" style="background:var(--lime)">BTP</div><div><div class="org">B.Tech Project · IIT Madras</div><div class="role">Digital Twin &amp; Autonomous Factory Lab · Prof. G. L. Samuel · ongoing</div></div></div>
+          <h3 style="font-size:clamp(19px,2.2vw,24px)">Digital twin of a legacy CNC micro-milling machine</h3>
+          <ul>
+            <li>Building a <strong>real-time data acquisition pipeline</strong> for an old controller with no data interface: spindle torque, current and position at up to 10 kHz over serial and DAQ.</li>
+            <li>Modelling <strong>spindle-motor and cutting-force dynamics</strong> in MATLAB/Simulink, with PID control and cutting-torque models.</li>
+            <li>Implementing an <strong>Extended Kalman Filter</strong> for tool-wear estimation on simulated and live data, backed by a study of tool-wear mechanisms.</li>
+          </ul>
+          <div class="tags"><span>MATLAB / Simulink</span><span>EKF</span><span>DAQ</span><span>Digital twin</span></div>
+        </div>
+        <div class="layers" aria-label="Layers of the digital twin">
+          <div><i style="background:var(--tang)">1</i><span>Data acquisition<small>torque, current, position up to 10 kHz</small></span></div>
+          <div><i style="background:var(--pink)">2</i><span>Physics-based model<small>spindle motor, PID, cutting torque</small></span></div>
+          <div><i style="background:var(--lilac)">3</i><span>Extended Kalman Filter<small>fuse model and sensors to estimate tool wear</small></span></div>
+          <div><i style="background:var(--lime)">4</i><span>In-process monitoring<small>precision without replacing the controller</small></span></div>
+        </div>
       </div>
     </article>
 
     <article class="box job">
-      <div class="jh"><div class="lg" style="background:var(--sky)">BA</div><div><div class="org">Bajaj Auto Ltd.</div><div class="role">Intern · M&amp;AT Design Automation · Akurdi, Pune</div></div></div>
-      <div class="stat"><s>~2 days</s><span aria-hidden="true">→</span><b>20 min</b></div>
+      <div class="jh"><div class="lg s" style="background:var(--lilac)">INBOUND</div><div><div class="org">Inbound Aerospace</div><div class="role">Design intern · Jun–Jul 2025</div></div></div>
       <ul>
-        <li>Built a <strong>VB.NET Windows Forms app on the Solid Edge COM API</strong> that automates boring-bar tooling design end to end.</li>
-        <li>Parametric 3D geometry, assembly constraints, draft and drawing generation, PMI dimensioning.</li>
+        <li>Designed a <strong>tilt-enabled mounting stand</strong> for dynamic ground testing of scaled re-entry vehicle models.</li>
+        <li>Supports a <strong>150 kg</strong> vehicle with <strong>±30° tilt</strong>; tolerance analysis in SolidWorks drove material choice and fits.</li>
       </ul>
-      <div class="tags"><span>VB.NET</span><span>Solid Edge API</span><span>CAD automation</span></div>
+      <div class="tags"><span>SolidWorks</span><span>Tolerance analysis</span></div>
     </article>
 
     <article class="box job">
-      <div class="jh"><div class="lg" style="background:var(--lilac)">IA</div><div><div class="org">Inbound Aerospace</div><div class="role">Engineering intern</div></div></div>
-      <ul><li>Internship with an aerospace company.</li></ul>
-      <div class="tags"><span>Aerospace</span></div>
+      <div class="jh"><div class="lg" style="background:var(--tang)">BHEL</div><div><div class="org">BHEL</div><div class="role">Mechanical intern · Dec 2024</div></div></div>
+      <ul>
+        <li>Prepared technical documents and <strong>BOMs for 8+ turbine assemblies</strong> for thermal power plant unit sets.</li>
+        <li>Tracked process sheets for <strong>12+ operations</strong> and supported inspection of <strong>30+ parts</strong> for dimensions and weld quality.</li>
+      </ul>
+      <div class="tags"><span>BOM</span><span>Process sheets</span><span>Inspection</span></div>
     </article>
 
     <article class="box job">
-      <div class="jh"><div class="lg" style="background:var(--tang)">BHEL</div><div><div class="org">BHEL</div><div class="role">Industrial trainee</div></div></div>
-      <ul><li>Industrial training at Bharat Heavy Electricals Limited, seeing large-scale manufacturing up close.</li></ul>
-      <div class="tags"><span>Heavy manufacturing</span></div>
+      <div class="jh"><div class="lg" style="background:var(--pink)">MMB</div><div><div class="org">Manjira Machine Builders</div><div class="role">Industrial trainee · Nov–Dec 2024</div></div></div>
+      <ul>
+        <li>Trained in <strong>CNC programming and simulation</strong> from 2D engineering drawings for precision machining.</li>
+        <li>Worked with BOMs, SOPs, dimensional check sheets and quality control on industrial assemblies.</li>
+      </ul>
+      <div class="tags"><span>CNC</span><span>Quality control</span></div>
     </article>
 
-    <article class="box job">
-      <div class="jh"><div class="lg" style="background:var(--pink)">MMB</div><div><div class="org">Manjira Machine Builders</div><div class="role">Intern</div></div></div>
-      <ul><li>Internship at a machine-building firm.</li></ul>
-      <div class="tags"><span>Machine building</span></div>
+    <article class="box job half">
+      <div class="jh"><div class="lg s" style="background:var(--sky)">ZIRO</div><div><div class="org">Ziro · AI Trainer</div><div class="role">Remote · Dec 2024–Apr 2025</div></div></div>
+      <ul>
+        <li>Trained an AI model on <strong>Strength of Materials</strong> by curating structured technical content.</li>
+        <li>Designed problem-based evaluations to test and validate the model's grasp of the concepts.</li>
+      </ul>
+      <div class="tags"><span>LLM training data</span><span>Evaluation</span></div>
+    </article>
+
+    <article class="box job half">
+      <div class="jh"><div class="lg s" style="background:var(--lime)">TEACH<br>NOOK</div><div><div class="org">Teachnook · Full-stack intern</div><div class="role">8-week programme · Sep–Oct 2023</div></div></div>
+      <ul>
+        <li>Built a <strong>full-stack event-media platform</strong> (Next.js, Node.js, PostgreSQL) with AWS Rekognition face search as the major project.</li>
+        <li>Practised responsive front-end work in HTML, CSS and JavaScript.</li>
+      </ul>
+      <div class="tags"><span>Next.js</span><span>Node.js</span><span>AWS</span></div>
     </article>
   </div>
 </div></section>
 
 <section id="projects"><div class="wrap">
-  <div class="ph-head">
-    <div><span class="kick"><i></i>Projects</span><h2>Stuff I've built</h2><p class="sub">Self projects and course projects, sorted into three tracks.</p></div>
-    <div class="seg" role="group" aria-label="Filter projects">
-      <button data-f="all" aria-pressed="true">All</button>
-      <button data-f="Self" aria-pressed="false">Self</button>
-      <button data-f="Course" aria-pressed="false">Course</button>
-    </div>
-  </div>
-  <div id="tracks"></div>
+  <span class="kick"><i></i>Projects</span>
+  <h2>Stuff I've built</h2>
+  <p class="sub">Self, course and internship projects, sorted into three tracks.</p>
+  <div id="ptracks"></div>
 </div></section>
 
 <section id="pors"><div class="wrap">
   <span class="kick"><i></i>Positions of responsibility</span>
-  <h2>Leading on campus</h2>
-  <div class="pors">
-    <article class="box por">
-      <div class="lg" style="background:var(--lime)">TH</div>
-      <div><h3>Hostel Legislator</h3><div class="at">Tapti Hostel · IIT Madras</div></div>
-      <p>Elected to represent Tapti Hostel in student governance: carrying residents' issues to the legislature and helping shape hostel and institute policy.</p>
-      <div class="tags"><span>Elected</span><span>Student governance</span><span>Tapti Hostel</span></div><span class="big" aria-hidden="true">TAPTI</span>
-    </article>
-    <article class="box por">
-      <div class="lg" style="background:var(--pink)">N</div>
-      <div><h3>Core Team, Outreach</h3><div class="at">Nirmaan · IIT Madras pre-incubator</div></div>
-      <p>Directed media outreach for Nirmaan: podcasts with founders, representing Nirmaan at INVENTIV'25 and running speaker logistics at Demo Day'25.</p>
-      <div class="nums"><div><b>5</b><span>podcast episodes</span></div><div><b>100+</b><span>profs and founders pitched to</span></div><div><b>50+</b><span>founders met at Demo Day</span></div></div>
-      <span class="big" aria-hidden="true">NIRMAAN</span>
-    </article>
-  </div>
+  <h2>My IIT Madras timeline</h2>
+  <p class="sub">From outreach to the student legislature: what I've run on campus, year by year.</p>
+  <div class="tl" id="tl"></div>
 </div></section>
 
 <section id="extra"><div class="wrap">
   <span class="kick"><i></i>Extracurriculars</span>
   <h2>Off the syllabus</h2>
+  <div class="box vb">
+    <div class="l">
+      <span class="pill" style="background:var(--card);color:var(--ink);align-self:flex-start">Sports</span>
+      <h3>Volleyball is my thing.</h3>
+      <p>From inter-hostel games to the Inter-IIT squad: setting up plays, captaining teams and showing up for every practice.</p>
+      <svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="#151311" stroke-width="4"><circle cx="50" cy="50" r="44" fill="#fffaf1"/><path d="M50 6c-8 18-8 40 0 56M8 40c18 4 34 14 42 22M92 40c-18 4-34 14-42 22M30 88c6-12 14-20 20-26M70 88c-6-12-14-20-20-26"/></svg>
+    </div>
+    <div class="r">
+      <div class="medal"><div class="m" style="background:var(--lime)">GOLD</div><div><b>Inter-IIT 2025 · volleyball probables</b><span>Selected for the IIT Madras squad that won gold undefeated, without dropping a set.</span></div></div>
+      <div class="medal"><div class="m" style="background:var(--sky)">4th</div><div><b>Jimmy George'25 Tournament</b><span>Organised by the Tamil Nadu Volleyball Association.</span></div></div>
+      <div class="medal"><div class="m" style="background:var(--tang)">C</div><div><b>Captain, Mechanical · IDL'25</b><span>Led the department team to 4th in the Inter-Departmental League; also captained MEA volleyball to 1st.</span></div></div>
+      <div class="medal"><div class="m" style="background:var(--pink)">3rd</div><div><b>Schroeters bronze with Tapti</b><span>Inter-hostel championship, competed twice. Plus 3rd in MEA badminton.</span></div></div>
+    </div>
+  </div>
   <div class="ach">
-    <div class="box ac" style="background:var(--lime);color:var(--onacc)"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></div><b>5 episodes</b><p style="color:inherit">Recorded and published a founder podcast series for Nirmaan, and personally hosted the CEO of GrowXCD.</p></div>
-    <div class="box ac"><div class="ic" style="background:var(--lilac)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#151311" stroke-width="2.2" stroke-linecap="round"><path d="M3 21h18M6 21V10l6-6 6 6v11"/><path d="M10 21v-5h4v5"/></svg></div><b>INVENTIV'25</b><p>Represented Nirmaan at IIT Madras's R&amp;D showcase, pitching to 100+ professors and early-stage founders from IITs and NITs.</p></div>
-    <div class="box ac"><div class="ic" style="background:var(--sky)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#151311" stroke-width="2.2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.8 6 5.5"/></svg></div><b>50+ founders</b><p>Coordinated guests and speakers at Nirmaan Demo Day'25 and met founders and mentors from across the ecosystem.</p></div>
-    <div class="box ac" style="background:var(--tang);color:var(--onacc)"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><b>Codeforces</b><p style="color:inherit">Competitive programmer, currently working through Striver's A2Z DSA sheet end to end.</p></div>
+    <div class="box ac"><div class="ic" style="background:var(--lilac)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#151311" stroke-width="2.2" stroke-linecap="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><b>4th · Shaastra'26</b><p>Programming contest at IIT Madras's tech fest.</p></div>
+    <div class="box ac"><div class="ic" style="background:var(--lime)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#151311" stroke-width="2.2" stroke-linecap="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg></div><b>Finalist · IndustryAI Hackathon</b><p>Made the finals of the IndustryAI hackathon.</p></div>
+    <div class="box ac"><div class="ic" style="background:var(--sky)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#151311" stroke-width="2.2" stroke-linecap="round"><path d="M3 5h18v11H3zM8 20h8M12 16v4"/></svg></div><b>Workshop mentor</b><p>Taught "How to build a webpage" to a class of 40+ at Mechanica'26.</p></div>
+    <div class="box ac"><div class="ic" style="background:var(--pink)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#151311" stroke-width="2.2" stroke-linecap="round"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></div><b>JEE Advanced'23</b><p>Also qualified JEE Mains, B.Arch, TS-EAMCET and IOQM 2022–23; SOF IMO zonal level.</p></div>
   </div>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap">
   <div class="box">
-    <div><h2>Let's build something cool.</h2><p>Open to roles in core mechanical, software, data and product. DMs are open.</p></div>
+    <div><h2>Let's build something cool.</h2><p>Open to roles in core engineering, software, data and product. DMs and inbox are open.</p></div>
     <div class="cta">
       <a class="btn go" href="https://www.linkedin.com/in/harsha1524" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a class="btn" href="https://github.com/Harsha1524" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn mail" href="mailto:harshavardhanreddy1524@gmail.com">harshavardhanreddy1524@gmail.com</a>
     </div>
   </div>
 </div></section>
-<footer>made with too much chai · © 2026 Harsha · IIT Madras</footer>
+<footer>made with too much chai · © 2026 Kandhi Harsha Vardhan Reddy · IIT Madras</footer>
 
 <script>
 {
-const words=['Digital twins','CAD automation','Robotics','Full-stack','Data analytics','Machine learning','Student @ IIT Madras','Mechanical engineering'];
-const tick=document.getElementById('tick');
-tick.innerHTML=words.concat(words).map(w=>'<span>'+w+'</span>').join('');
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const words=['Student @ IIT Madras','Design automation','Digital twins','Backends','Computer vision','LLM pipelines','Product thinking','Volleyball'];
+document.getElementById('tick').innerHTML=words.concat(words).map(w=>'<span>'+esc(w)+'</span>').join('');
 
+const TY={Course:'var(--pink)',Self:'var(--sky)',Internship:'var(--lilac)',Competition:'var(--lime)'};
 const T=[
- {id:'mech',name:'Mechanical',bg:'var(--tang)',blurb:'Robots, fixtures, metrology and CAD.',p:[
-  {t:'Learning-Based Mobile Manipulator',y:'Self',d:'Simulated AMR with an arm and a gripper camera that learns to carry an object from A to B in a room, instead of following a fixed program.',g:['Robotics','CAD','Vision','Simulation'],w:1},
-  {t:'Autonomous Mecanum-Wheel Robot',y:'Course',d:'Omnidirectional robot that navigates on its own using IMU and IR sensing.',g:['Mecanum drive','IMU','IR sensors']},
-  {t:'Image-to-CAD Reverse Engineering',y:'Course',d:'AI in Manufacturing: a top-view photo of an extruded part goes in, a dimensioned CAD model comes out.',g:['Computer vision','CAD','Python'],w:1},
-  {t:'Self-Aligning Welding Fixture',y:'Course',d:'Principles of Product Design group project: a ball-wheel fixture that self-aligns pipes and cones for welding, driven by a House of Quality.',g:['Product design','QFD']},
-  {t:'CMM Inspection Plan',y:'Course',d:'Manufacturing Metrology: inspection plan for the outer geometry of a spindle on a coordinate measuring machine.',g:['CMM','GD&T','Metrology']},
-  {t:'Shaft Assembly Fatigue Analysis',y:'Course',d:'Design of Machine Elements: fatigue life analysis of a shaft assembly.',g:['Machine design','Fatigue']},
-  {t:'Crankshaft Model',y:'Course',d:'Manufacturing Technology: planning and building a crankshaft model.',g:['Manufacturing']},
-  {t:'Miniature Cart Fabrication',y:'Course',d:'Designed and fabricated a miniature cart in the workshop.',g:['Fabrication','Workshop']}
+ {name:'Core',bg:'var(--tang)',blurb:'Machines, manufacturing and design.',p:[
+  {t:'Image-to-CAD Reverse Engineering',y:'Course',by:'AI in Manufacturing',w:1,b:['A top-view photo of an extruded part goes in; a dimensioned CAD model comes out.','Aimed at reverse-engineering parts without measuring them by hand.'],g:['Computer vision','CAD','Python']},
+  {t:'Aircraft Production Line Simulation',y:'Course',by:'Prof. G. L. Samuel',k:'₹6.5 Cr → ₹4.2 Cr per aircraft',b:['Simulated a full aircraft line in Tecnomatix with 5 sub-assemblies; fuselage CNC machining capped output at 14 units (73.7% utilisation).','Proposed bulk procurement and automation to scale to 35+ units.'],g:['Tecnomatix','Plant simulation']},
+  {t:'Autonomous Mecanum-Wheel Robot',y:'Course',by:'Prof. Sushanta Kumar P',k:'95%+ path-following accuracy',b:['Omnidirectional robot with an IMU and 5 IR sensors.','Calibrated sensor thresholds and tuned feedback loops over 50+ test runs.'],g:['Robotics','IMU','Control']},
+  {t:'Bench Grinder Shaft Design',y:'Course',by:'Prof. Sourav Rakshit',k:'FoS 2.03 · 500,000+ hr bearing life',b:['Designed a 1.0 HP grinder shaft for 5/8" wheel arbors and 6203 bearings.','Modified Goodman fatigue analysis; specified ISO P5 bearings.'],g:['Machine design','Fatigue']},
+  {t:'Tumbler Gearbox',y:'Course',by:'Prof. Amitava Ghosh',b:['3D-printed four-gear tumbler for lathe feed reversal: 32-tooth PLA gears at 45 mm centres.','Pivoting lever for forward, neutral and reverse; tuned centre distances to remove backlash.'],g:['Gear design','3D printing']},
+  {t:'Miniature Cart',y:'Course',by:'Prof. Sathyan Subbiah',k:'~20% less rolling resistance',b:['Fully working cart from 8 components, made with several manufacturing processes.','Optimised material choice and wheel alignment through physical testing.'],g:['Manufacturing','Fabrication']}
  ]},
- {id:'sde',name:'Software (SDE)',bg:'var(--lilac)',blurb:'Backends, web apps and tools.',p:[
-  {t:'URL Shortener with Caching & Rate Limiting',y:'Self',d:'Base62 short links on PostgreSQL, Redis caching, per-client rate limiting and async click analytics through a job queue.',g:['Node.js','Express','PostgreSQL','Redis']},
-  {t:'Splitwise-Style Expense Splitter',y:'Self',d:'Track shared expenses in a group and settle up. Deployed on Vercel.',g:['React','Vite','Tailwind','Vercel']},
-  {t:'Portfolio Website',y:'Self',d:'This site: hand-written HTML and CSS, deployed from GitHub to Vercel.',g:['HTML','CSS','Vercel']}
+ {name:'SDE',bg:'var(--lilac)',blurb:'Backends, systems and full-stack.',p:[
+  {t:'Event & Media Management Platform',y:'Internship',by:'Teachnook · 2023',b:['Full-stack event photography platform: Next.js 14, Express, PostgreSQL with Prisma, role-based access, bulk uploads and QR guest sharing.','AWS Rekognition face search and moderation, Sharp image pipeline, Socket.IO notifications, JWT auth, Docker.'],g:['Next.js','Express','PostgreSQL','AWS','Docker']},
+  {t:'URL Shortener with Caching & Rate Limiting',y:'Self',by:'Dec 2025',b:['Node.js/Express and PostgreSQL with Base62 codes; Redis caching cuts database reads for hot URLs.','Rate limiting, plus async click analytics on a job queue so tracking never slows the redirect.'],g:['Node.js','PostgreSQL','Redis']},
+  {t:'Mini Redis: In-Memory Key-Value Store',y:'Self',by:'Jan 2026',b:['TCP server implementing a simplified Redis clone.','Custom hash map and LRU eviction built from a doubly linked list and a hash map.'],g:['C++','TCP','Data structures']},
+  {t:'Library Management System',y:'Self',by:'Apr 2025',b:['Object-oriented design with modular classes for books, members and transactions.','Issue/return tracking and fine calculation through inheritance and polymorphism.'],g:['OOP','C++']}
  ]},
- {id:'da',name:'Data & ML (DA)',bg:'var(--lime)',blurb:'Analytics, NLP, vision and LLMs.',p:[
-  {t:'NL2SQL Business Intelligence Agent',y:'Self',d:'Ask business questions in plain English and get the SQL and the answer back.',g:['LLMs','SQL','Python'],w:1},
-  {t:'PPE Guard',y:'Course',d:'Checks PPE compliance on the shop floor and identifies workers by face.',g:['Object detection','Face recognition']},
-  {t:'Fine-Tuned Mistral 7B',y:'Self',d:'Fine-tuned a 7B open-weights language model for a downstream task.',g:['LLM','Fine-tuning']},
-  {t:'English to Telugu Translation',y:'Self',d:'Neural machine translation from English to Telugu.',g:['NMT','Seq2seq']},
-  {t:'BERT Spell Checker',y:'Self',d:'Context-aware spelling correction built on BERT.',g:['BERT','NLP']},
-  {t:'LSTM Next-Word Prediction',y:'Self',d:'A language model that suggests the next word as you type.',g:['LSTM','NLP']},
-  {t:'Hand Gesture Recognition',y:'Self',d:'Classifies hand gestures from a camera feed.',g:['CNN','OpenCV']},
-  {t:'Photo Colourisation (DeOldify)',y:'Self',d:'GAN-based colourisation of black-and-white photos.',g:['GAN','Vision']},
-  {t:'Neural Tangent Kernel Study',y:'Self',d:'How very wide networks train, seen through NTK theory.',g:['DL theory']}
+ {name:'Data & ML',bg:'var(--lime)',blurb:'Vision, NLP, LLMs and GenAI products.',p:[
+  {t:'AI-Based PPE Compliance Detection',y:'Course',by:'Prof. G. L. Samuel · 2026',w:1,b:['End-to-end computer vision pipeline that detects PPE violations and tracks workers in real time.','Automated logging, debouncing and analytics to cut false positives.'],g:['YOLOv8','OpenCV','Tracking']},
+  {t:'NL2SQL Business Intelligence Agent',y:'Self',by:'AWS Bedrock',b:['Modular natural-language-to-SQL pipeline across relational data stores.','LLM domain classification and entity resolution; reusable LLM and RDBMS facades with SQLite execution and structured tests.'],g:['LLMs','AWS Bedrock','SQL']},
+  {t:'English to Telugu Translation',y:'Self',by:'Transformer',b:['Transformer encoder-decoder trained on the OPUS-100 corpus.','BPE tokenisation, positional encoding, multi-head attention, six stacked encoder blocks.'],g:['Transformers','PyTorch','NLP']},
+  {t:'Real-Time Hand Gesture Recognition',y:'Self',by:'Computer vision',k:'~81% accuracy, 6 classes',b:['Pre-processed 1.2k+ images with skin segmentation, morphology and normalisation.','HOG features with a linear classifier, validated with a confusion matrix.'],g:['OpenCV','HOG','scikit-learn']},
+  {t:'Next-Word Prediction',y:'Self',by:'NLP',b:['LSTM encoder-decoder for smooth inline autocompletion.','Tokenisation, seq2seq generation and one-hot encoding.'],g:['LSTM','TensorFlow']},
+  {t:'Botman Begins: GenAI Competition',y:'Competition',by:'Product case study',b:['Scoped an end-to-end GenAI assistant: user journeys, prompt flows and model parameters for low latency.','Benchmarked rival tools, prioritised the backlog by impact vs effort, and tested wireframes with target users.'],g:['Product','GenAI','Wireframes']}
  ]}
 ];
-const tyBg={Self:'var(--sky)',Course:'var(--pink)'};
-const esc=s=>s.replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-const box=document.getElementById('tracks');
-const render=f=>{
-  box.innerHTML=T.map(tr=>{
-    const ps=tr.p.filter(p=>f==='all'||p.y===f);
-    const cards=ps.length?ps.map(p=>'<article class="box pc">'+(p.w?'<span class="wip">in progress</span>':'')+'<span class="ty" style="background:'+tyBg[p.y]+'">'+p.y+'</span><h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p><div class="tags">'+p.g.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div></article>').join(''):'<div class="empty">No '+f.toLowerCase()+' projects in this track yet.</div>';
-    return '<div class="track" id="'+tr.id+'"><div class="th"><h3 style="background:'+tr.bg+'">'+tr.name+'</h3><p>'+tr.blurb+'</p><span class="n">'+ps.length+' project'+(ps.length===1?'':'s')+'</span></div><div class="pg">'+cards+'</div></div>';
-  }).join('');
-};
-const btns=[...document.querySelectorAll('.seg button')];
-const set=f=>{btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f));render(f)};
-btns.forEach(b=>b.addEventListener('click',()=>set(b.dataset.f)));
-set('all');
+document.getElementById('ptracks').innerHTML=T.map(tr=>'<div class="track"><div class="th"><h3 style="background:'+tr.bg+'">'+esc(tr.name)+'</h3><p>'+esc(tr.blurb)+'</p><span class="n">'+tr.p.length+' projects</span></div><div class="pg">'+tr.p.map(p=>'<article class="box pc"><div class="meta"><span class="pill" style="background:'+TY[p.y]+'">'+p.y+'</span><span class="by">'+esc(p.by)+'</span>'+(p.w?'<span class="wip">in progress</span>':'')+'</div><h3>'+esc(p.t)+'</h3>'+(p.k?'<span class="kpi" style="background:'+tr.bg+'">'+esc(p.k)+'</span>':'')+'<ul>'+p.b.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><div class="tags">'+p.g.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div></article>').join('')+'</div></div>').join('');
+
+const Y=[
+ {y:'2026 →',s:'Third year',r:[
+  {lg:'TAPTI',c:'var(--lime)',role:'Hostel Legislator',org:'Tapti Hostel · Student Legislative Council',d:'May 2026 – present',b:['Elected to the Student Legislative Council for 370+ residents, which oversees ₹3.5 Cr+ of student funds.','Supervise the Tapti Hostel Council of 6 elected secretaries and a manager, and the hostel’s yearly budget.','Vote on institute agendas, bills and resolutions that shape student policy.'],n:[['370+','residents'],['₹3.5 Cr+','student funds'],['6','secretaries']]}
+ ]},
+ {y:'2025–26',s:'Second year',r:[
+  {lg:'MEA',c:'var(--tang)',role:'Secretary',org:'Mechanical Engineering Association',d:'Jun 2025 – May 2026',b:['Led a 4-tier, 80+ member team running 5 major events for 1,500+ students.','Organised the department tech fest end to end: 3,000+ participants on an ₹8L+ budget.'],n:[['80+','team'],['3,000+','fest participants'],['₹8L+','budget']]},
+  {lg:'CMGFS',c:'var(--sky)',role:'Manager',org:'Committee for Monitoring General Facilities for Students',d:'Jun 2025 – May 2026',b:['Led 32 members running 40+ student facilities between the administration and 11,000+ students.','Negotiated with KFC and Domino’s to come on campus at student-friendly prices.'],n:[['₹12L','annual budget'],['40+','facilities'],['11,000+','students']]},
+  {lg:'SAAR<br>ANG',c:'var(--pink)',role:'Security & Safety Manager',org:'Saarang, IIT Madras’s cultural fest',d:'Jun 2025 – May 2026',b:['Led 30+ coordinators and 120+ volunteers for an 80K+ attendee fest: crowd flow, parking, buses and transport for 60,000+.','Coordinated 100+ police, 300+ security staff and 15+ vendors; got 14+ metal detectors (₹20,520) sponsored.'],n:[['80K+','attendees'],['₹10L+','logistics budget'],['420+','police & security']]},
+  {lg:'SOC',c:'var(--lilac)',role:'Sponsorship Core',org:'SOC (sports)',d:'Jun 2025 – May 2026',b:['Led a team of 6 pitching to 80+ potential sponsors.','Raised ₹20K+ cash and ₹30K+ in equipment by engaging alumni, plus ₹10K+ in Decathlon coupons.'],n:[['₹50K+','cash + equipment'],['80+','sponsors pitched']]}
+ ]},
+ {y:'2024–25',s:'First year',r:[
+  {lg:'NIR<br>MAAN',c:'var(--lime)',role:'Outreach Coordinator',org:'Nirmaan, IIT Madras pre-incubator',d:'Jun 2024 – May 2025',b:['Directed media outreach: recorded and published 5 founder podcast episodes, and hosted GrowXCD’s CEO myself.','Pitched Nirmaan at INVENTIV’25 to 100+ professors and founders from IITs and NITs, securing on-the-spot collaborations.','Handled guests and speakers at Nirmaan Demo Day’25, meeting 50+ early-stage founders.'],n:[['5','podcasts'],['100+','pitched to'],['50+','founders met']]}
+ ]}
+];
+document.getElementById('tl').innerHTML=Y.map(g=>'<div class="yr"><div class="ylab"><b>'+g.y+'</b><span>'+g.s+'</span></div><div class="roles'+(g.r.length===1?' one':'')+'">'+g.r.map(r=>'<article class="box por"><div class="jh"><div class="lg s" style="background:'+r.c+'">'+r.lg+'</div><div><div class="org">'+esc(r.role)+'</div><div class="role">'+esc(r.org)+'</div></div><span class="when">'+esc(r.d)+'</span></div><ul>'+r.b.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><div class="nums">'+r.n.map(x=>'<div><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></div>').join('')+'</div></article>').join('')+'</div></div>').join('');
 }
 </script>
 </body>
