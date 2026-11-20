@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harsha · Portfolio</title>
+<meta name="description" content="Harsha — Mechanical Engineering at IIT Madras. Digital twins, design automation, software and machine learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: confident, precise, a little playful — an engineer's personal site.
+   IDEA: an engineering drawing sheet — linework, dimension lines, a title block.
+   PICTURE: an end mill drawn solid on the left and its dashed "digital twin" on the right, linked by data.
+   COLOUR and TYPE: white sheet, drafting-ink navy, line blue, one orange accent; Archivo throughout.
+   LAYOUT: sticky nav, hero composition with title block, then bands: work, projects, leadership, contact. */
+:root{color-scheme:light dark;
+  --bg:light-dark(#fbfcfe,#0b1424);--panel:light-dark(#ffffff,#111d33);
+  --ink:light-dark(#10223f,#e6edfb);--soft:light-dark(#4a5a76,#a7b5cf);
+  --line:light-dark(#1f4fd1,#7fa2ff);--grid:light-dark(#e3e9f5,#18264073);
+  --rule:light-dark(#cdd7ea,#263656);--acc:#ff5a1f;--accink:light-dark(#c63d0a,#ff8a5c)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Archivo,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.08;text-wrap:balance}
+h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.01em}
+h3{font-size:19px;font-weight:600}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(40px,6vw,88px) max(5vw,16px);border-top:1px solid var(--rule)}
+.lede{color:var(--soft);max-width:62ch;margin-top:12px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+nav .wrap{display:flex;align-items:center;gap:8px;padding:10px max(5vw,16px);flex-wrap:wrap}
+.mark{font-weight:800;font-size:18px;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:8px}
+.mark i{width:12px;height:12px;border:2.5px solid var(--acc);border-radius:50%;display:inline-block}
+nav a.l{text-decoration:none;color:var(--soft);padding:10px 10px;border-radius:8px;font-weight:500;font-size:15px}
+nav a.l:hover,nav a.l:focus-visible{color:var(--ink);background:var(--grid)}
+
+/* hero */
+.hero{position:relative;padding:clamp(32px,5vw,72px) max(5vw,16px) clamp(32px,4vw,56px);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(48px,7vw,84px);font-weight:800;letter-spacing:-.02em}
+.hero .role{font-size:clamp(19px,2vw,23px);font-weight:500;margin-top:14px;max-width:30ch}
+.hero .lede{margin-top:16px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink);font-size:15.5px}
+.btn.p{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible,.chip:focus-visible,nav a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.sheet{position:relative;background:var(--panel);border:2px solid var(--ink);border-radius:4px;box-shadow:10px 10px 0 color-mix(in srgb,var(--line) 18%,transparent)}
+.sheet svg{display:block;width:100%;height:auto}
+.tb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);font-size:13px}
+.tb div{padding:8px 10px;border-left:1px solid var(--rule)}
+.tb div:first-child{border-left:0}
+.tb b{display:block;font-size:14.5px;color:var(--ink);font-weight:600}
+.tb span{color:var(--soft)}
+.draw path,.draw line,.draw circle,.draw rect,.draw polyline{vector-effect:non-scaling-stroke}
+.flow{stroke-dasharray:4 7;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-22}}
+
+/* facts strip */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:clamp(28px,4vw,48px);border:2px solid var(--ink);background:var(--panel)}
+.facts div{padding:16px 18px;border-left:1px solid var(--rule)}
+.facts div:first-child{border-left:0}
+.facts b{display:block;font-size:clamp(22px,2.6vw,30px);font-weight:800;line-height:1.1}
+.facts span{color:var(--soft);font-size:14px}
+
+/* experience */
+.xp{display:grid;gap:0;margin-top:32px;border-top:2px solid var(--ink)}
+.xp article{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:24px;padding:24px 0;border-bottom:1px solid var(--rule)}
+.xp .co{font-weight:800;font-size:20px;line-height:1.2}
+.xp .tm{color:var(--soft);font-size:14.5px;margin-top:4px}
+.xp p{color:var(--soft);max-width:68ch}
+.xp p strong{color:var(--ink)}
+.big{display:inline-flex;align-items:baseline;gap:10px;margin-bottom:8px;font-weight:800;font-size:clamp(22px,2.4vw,28px)}
+.big em{font-style:normal;color:var(--accink)}
+
+/* projects */
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink);font:500 15px Archivo,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:16px;margin-top:28px}
+.card{position:relative;background:var(--panel);border:1.5px solid var(--rule);border-radius:6px;padding:22px 20px 18px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--line);transform:translateY(-2px)}
+.card .k{font-size:13.5px;color:var(--line);font-weight:600}
+.card p{color:var(--soft);font-size:15.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tags span{font-size:13px;padding:3px 9px;border-radius:999px;background:var(--grid);color:var(--ink);white-space:nowrap}
+.wip{position:absolute;top:16px;right:16px;font-size:13px;font-weight:600;color:var(--accink)}
+
+/* skills + leadership */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px)}
+.sk{margin-top:24px;display:grid;gap:18px}
+.sk div{display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:14px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
+.sk dt{font-weight:600}
+.sk dd{margin:0;color:var(--soft)}
+.lead{margin-top:24px;display:grid;gap:16px}
+.lead article{padding:20px;border:1.5px solid var(--rule);border-radius:6px;background:var(--panel)}
+.lead p{color:var(--soft);margin-top:6px;font-size:15.5px}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-top:0}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:center}
+.contact h2{font-size:clamp(32px,4.4vw,52px)}
+.contact p{opacity:.8;margin-top:12px;max-width:52ch}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn.p{background:var(--acc);border-color:var(--acc);color:#fff}
+footer{padding:20px max(5vw,16px);color:var(--soft);font-size:14px;text-align:center}
+
+@media(max-width:900px){.hero .wrap,.two,.contact .wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(3){border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--rule)}
+  .xp article{grid-template-columns:minmax(0,1fr);gap:8px}
+  .tb{grid-template-columns:repeat(2,minmax(0,1fr))}.tb div:nth-child(3){border-left:0}.tb div:nth-child(n+3){border-top:1px solid var(--rule)}
+  nav a.l{padding:8px 7px;font-size:14px}
+  .sk div{grid-template-columns:minmax(0,1fr);gap:4px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="mark" href="#top"><i></i>Harsha</a>
+  <a class="l" href="#work">Work</a>
+  <a class="l" href="#projects">Projects</a>
+  <a class="l" href="#more">Skills</a>
+  <a class="l" href="#contact">Contact</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <h1>Harsha</h1>
+    <p class="role">Mechanical engineer who builds software for machines.</p>
+    <p class="lede">Third-year B.Tech, Mechanical Engineering at IIT Madras. I work where manufacturing meets code: digital twins for legacy machine tools, CAD design automation, robotics, and the web and ML systems around them.</p>
+    <div class="cta">
+      <a class="btn p" href="#projects">See projects</a>
+      <a class="btn" href="https://www.linkedin.com/in/harsha1524" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+
+  <figure class="sheet" style="margin:0" aria-label="Drawing of an end mill and its dashed digital twin, linked by a data stream">
+    <svg class="draw" viewBox="0 0 560 330" role="img" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <!-- physical tool -->
+      <g stroke="var(--ink)" stroke-width="2.2">
+        <rect x="70" y="40" width="70" height="120" rx="3" fill="var(--grid)"/>
+        <rect x="84" y="160" width="42" height="34" fill="var(--panel)"/>
+        <path d="M92 194 L92 262 Q105 276 118 262 L118 194" fill="var(--panel)"/>
+        <path d="M92 206 L118 222 M92 228 L118 244 M92 250 L114 262" stroke="var(--line)" stroke-width="1.8"/>
+      </g>
+      <path d="M105 28 V286" stroke="var(--line)" stroke-width="1" stroke-dasharray="12 4 2 4"/>
+      <!-- workpiece -->
+      <rect x="40" y="276" width="130" height="22" fill="color-mix(in srgb,var(--acc) 18%,transparent)" stroke="var(--ink)" stroke-width="2"/>
+      <!-- dimension -->
+      <g stroke="var(--soft)" stroke-width="1">
+        <path d="M30 40 V160 M24 40 H62 M24 160 H62"/>
+        <path d="M30 40 l-4 9 h8 z M30 160 l-4 -9 h8 z" fill="var(--soft)"/>
+      </g>
+      <text x="18" y="104" fill="var(--soft)" font-size="12" font-family="Archivo" transform="rotate(-90 18 104)" text-anchor="middle">spindle</text>
+
+      <!-- data stream -->
+      <path class="flow" d="M150 110 C 230 110, 250 70, 330 70" stroke="var(--acc)" stroke-width="2.4"/>
+      <path class="flow" d="M150 140 C 230 140, 250 180, 330 180" stroke="var(--line)" stroke-width="2.4"/>
+      <g font-family="Archivo" font-size="12.5" fill="var(--ink)">
+        <rect x="196" y="76" width="92" height="22" rx="11" fill="var(--panel)" stroke="var(--acc)"/>
+        <text x="242" y="91" text-anchor="middle">DAQ · sensors</text>
+        <rect x="196" y="160" width="92" height="22" rx="11" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="242" y="175" text-anchor="middle">EKF fusion</text>
+      </g>
+
+      <!-- twin -->
+      <g stroke="var(--line)" stroke-width="2" stroke-dasharray="6 5">
+        <rect x="350" y="40" width="70" height="120" rx="3"/>
+        <rect x="364" y="160" width="42" height="34"/>
+        <path d="M372 194 L372 262 Q385 276 398 262 L398 194"/>
+      </g>
+      <!-- live readout -->
+      <g font-family="Archivo">
+        <rect x="440" y="52" width="104" height="132" rx="6" fill="var(--panel)" stroke="var(--rule)" stroke-width="1.5"/>
+        <text x="452" y="74" font-size="12" fill="var(--soft)">twin state</text>
+        <polyline points="452,112 466,100 480,106 494,88 508,96 522,80 532,86" stroke="var(--acc)" stroke-width="2"/>
+        <rect x="452" y="128" width="80" height="7" rx="3.5" fill="var(--grid)"/>
+        <rect x="452" y="128" width="54" height="7" rx="3.5" fill="var(--line)"/>
+        <rect x="452" y="146" width="80" height="7" rx="3.5" fill="var(--grid)"/>
+        <rect x="452" y="146" width="30" height="7" rx="3.5" fill="var(--acc)"/>
+        <text x="452" y="174" font-size="12" fill="var(--soft)">monitoring</text>
+      </g>
+      <text x="385" y="300" font-family="Archivo" font-size="13" fill="var(--line)" text-anchor="middle" font-weight="600">digital twin</text>
+      <text x="105" y="318" font-family="Archivo" font-size="13" fill="var(--ink)" text-anchor="middle" font-weight="600">legacy machine</text>
+    </svg>
+    <div class="tb">
+      <div><span>Drawn by</span><b>Harsha</b></div>
+      <div><span>Discipline</span><b>Mechanical</b></div>
+      <div><span>Institute</span><b>IIT Madras</b></div>
+      <div><span>Sheet</span><b>1 of 1</b></div>
+    </div>
+  </figure>
+</div>
+
+<div class="wrap"><div class="facts">
+  <div><b>4</b><span>industry internships</span></div>
+  <div><b>2 days → 20 min</b><span>tooling design time at Bajaj Auto</span></div>
+  <div><b>15+</b><span>projects across hardware, web and ML</span></div>
+  <div><b>BTP</b><span>Digital Twin &amp; Autonomous Factory Lab</span></div>
+</div></div>
+</header>
+
+<section class="band" id="work"><div class="wrap">
+  <h2>Experience</h2>
+  <p class="lede">Shop floors, design offices and a research lab.</p>
+  <div class="xp">
+    <article>
+      <div><div class="co">Digital Twin &amp; Autonomous Factory Lab, IIT Madras</div><div class="tm">B.Tech Project · with Prof. G. L. Samuel</div></div>
+      <div><p><strong>Digital twin for a legacy CNC micro-milling machine.</strong> The machine runs on an old Windows-based controller with no native data interface, so the core problem is getting live data out of it at all. I'm building a four-layer architecture — data acquisition and communication, a physics-based model, sensor fusion with an Extended Kalman Filter, and a monitoring service — mapped from the research literature.</p></div>
+    </article>
+    <article>
+      <div><div class="co">Bajaj Auto Ltd.</div><div class="tm">Intern · M&amp;AT Design Automation, Akurdi</div></div>
+      <div><div class="big"><em>~2 days</em> → 20 minutes</div><p>Built a <strong>VB.NET Windows Forms application on the Solid Edge COM API</strong> that automates boring-bar tooling design end to end: parametric 3D geometry, assembly constraints, draft and drawing generation, and PMI dimensioning.</p></div>
+    </article>
+    <article>
+      <div><div class="co">Inbound Aerospace</div><div class="tm">Intern</div></div>
+      <div><p>Engineering internship with an aerospace company.</p></div>
+    </article>
+    <article>
+      <div><div class="co">BHEL</div><div class="tm">Industrial training</div></div>
+      <div><p>Hands-on exposure to heavy manufacturing at Bharat Heavy Electricals Limited.</p></div>
+    </article>
+    <article>
+      <div><div class="co">Manjira Machine Builders</div><div class="tm">Intern</div></div>
+      <div><p>Internship at a machine-building firm.</p></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="band" id="projects"><div class="wrap">
+  <div class="head">
+    <div><h2>Projects</h2><p class="lede">Filter by what you're hiring for.</p></div>
+    <div class="chips" role="group" aria-label="Filter projects">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="mfg" aria-pressed="false">Manufacturing &amp; robotics</button>
+      <button class="chip" data-f="sw" aria-pressed="false">Software</button>
+      <button class="chip" data-f="ml" aria-pressed="false">Machine learning</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="band" id="more"><div class="wrap two">
+  <div>
+    <h2>Toolkit</h2>
+    <dl class="sk">
+      <div><dt>Languages</dt><dd>Python, SQL, JavaScript, VB.NET</dd></div>
+      <div><dt>Web</dt><dd>React, Vite, Tailwind, Node.js, Express, PostgreSQL, Redis</dd></div>
+      <div><dt>ML / DL</dt><dd>LSTMs, transformers (BERT, NMT), GANs, LLM fine-tuning, computer vision</dd></div>
+      <div><dt>Engineering</dt><dd>Solid Edge &amp; COM API automation, Tecnomatix simulation, CMM inspection planning, fatigue analysis</dd></div>
+      <div><dt>Analytics</dt><dd>Excel (pivots, lookups, SUMIFS), SQL</dd></div>
+      <div><dt>Practice</dt><dd>Competitive programming on Codeforces; working through Striver's A2Z DSA sheet</dd></div>
+    </dl>
+  </div>
+  <div>
+    <h2>Leadership</h2>
+    <div class="lead">
+      <article><h3>Hostel Legislator, Tapti Hostel</h3><p>Elected representative for Tapti Hostel in IIT Madras student governance.</p></article>
+      <article><h3>Core Team, Outreach — Nirmaan</h3><p>Ran media outreach for IIT Madras's pre-incubator. Recorded and published five podcast episodes with founders, pitched Nirmaan at INVENTIV'25 to 100+ professors and founders, and coordinated speakers at Nirmaan Demo Day'25.</p></article>
+    </div>
+  </div>
+</div></section>
+
+<section class="band contact" id="contact"><div class="wrap">
+  <div>
+    <h2>Let's build something.</h2>
+    <p>Open to roles in product, software, data and core engineering. The quickest way to reach me is LinkedIn.</p>
+  </div>
+  <div class="cta" style="margin:0">
+    <a class="btn p" href="https://www.linkedin.com/in/harsha1524" target="_blank" rel="noopener">Message on LinkedIn ↗</a>
+    <a class="btn" href="#top">Back to top</a>
+  </div>
+</div></section>
+<footer>© 2026 Harsha · IIT Madras</footer>
+
+<script>
+{
+const P=[
+ {c:'mfg',k:'Research · BTP',t:'Digital Twin for CNC Micro-Milling',d:'Live data extraction from a legacy controller, physics model, EKF sensor fusion and a monitoring layer.',g:['Digital twin','EKF','DAQ'],w:1},
+ {c:'mfg',k:'Internship · Bajaj Auto',t:'Boring-Bar Design Automation',d:'Solid Edge COM API app that turns a ~2-day tooling design job into about 20 minutes.',g:['VB.NET','Solid Edge','CAD automation']},
+ {c:'mfg',k:'Course project',t:'Autonomous Mecanum-Wheel Robot',d:'Omnidirectional robot navigating with IMU and IR sensing.',g:['Robotics','IMU','Embedded']},
+ {c:'mfg',k:'Project',t:'Learning-Based Mobile Manipulator',d:'Simulated AMR with an arm and gripper camera that learns to move an object from A to B in a room.',g:['Robotics','Computer vision','Simulation'],w:1},
+ {c:'mfg',k:'AI in Manufacturing',t:'Image-to-CAD Reverse Engineering',d:'Top-view photo of an extruded part in, dimensioned CAD model out — aimed at reverse-engineering parts.',g:['Computer vision','CAD','Python'],w:1},
+ {c:'mfg',k:'Product Design · group',t:'Self-Aligning Welding Fixture',d:'Ball-wheel fixture that self-aligns pipes and cones for welding, developed from a House of Quality.',g:['Product design','QFD']},
+ {c:'mfg',k:'Metrology',t:'CMM Inspection Plan',d:'Inspection plan for the outer geometry of a spindle on a coordinate measuring machine.',g:['CMM','GD&T']},
+ {c:'sw',k:'Backend',t:'URL Shortener with Caching & Rate Limiting',d:'Base62 short links on Postgres with Redis caching, rate limiting and async click analytics via a job queue.',g:['Node.js','Express','PostgreSQL','Redis']},
+ {c:'sw',k:'Web app',t:'Splitwise-Style Expense Splitter',d:'Group expense tracking and settle-up, deployed on Vercel.',g:['React','Vite','Tailwind']},
+ {c:'sw',k:'Data / LLM',t:'NL2SQL Business Intelligence Agent',d:'Ask business questions in plain English; get SQL and answers back.',g:['LLMs','SQL','Python'],w:1},
+ {c:'ml',k:'Computer vision',t:'PPE Guard',d:'Detects PPE compliance on the shop floor and identifies workers by face.',g:['Object detection','Face ID']},
+ {c:'ml',k:'LLMs',t:'Fine-Tuned Mistral 7B',d:'Fine-tuning a 7B open-weights language model for a downstream task.',g:['LLM','Fine-tuning']},
+ {c:'ml',k:'NLP',t:'English → Telugu Translation',d:'Neural machine translation model for English to Telugu.',g:['NMT','Seq2seq']},
+ {c:'ml',k:'NLP',t:'BERT Spell Checker',d:'Context-aware spelling correction using BERT.',g:['BERT','Transformers']},
+ {c:'ml',k:'NLP',t:'LSTM Next-Word Prediction',d:'Language model that suggests the next word as you type.',g:['LSTM']},
+ {c:'ml',k:'Vision',t:'Hand Gesture Recognition',d:'Classifies hand gestures from camera input.',g:['CNN','OpenCV']},
+ {c:'ml',k:'Generative',t:'Photo Colourisation (DeOldify)',d:'GAN-based colourisation of black-and-white photos.',g:['GAN']},
+ {c:'ml',k:'Theory',t:'Neural Tangent Kernel Study',d:'Exploring how wide networks train through the lens of NTK theory.',g:['DL theory']}
+];
+const esc=s=>s.replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const grid=document.getElementById('grid');
+const render=f=>{grid.innerHTML=P.filter(p=>f==='all'||p.c===f).map(p=>'<article class="card">'+(p.w?'<span class="wip">In progress</span>':'')+'<span class="k">'+esc(p.k)+'</span><h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p><div class="tags">'+p.g.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div></article>').join('')};
+let cur='all';try{cur=localStorage.getItem('pf')||'all'}catch(e){}
+const chips=[...document.querySelectorAll('.chip')];
+const set=f=>{cur=f;chips.forEach(c=>c.setAttribute('aria-pressed',c.dataset.f===f));render(f);try{localStorage.setItem('pf',f)}catch(e){}};
+chips.forEach(c=>c.addEventListener('click',()=>set(c.dataset.f)));
+set(chips.some(c=>c.dataset.f===cur)?cur:'all');
+}
+</script>
+</body>
+</html>
