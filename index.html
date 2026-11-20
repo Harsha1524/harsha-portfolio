@@ -234,7 +234,7 @@ footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:14px}
       </div>
       <span class="st st1">Bajaj: 2 days → 2 min</span>
       <span class="st st2">BTP: digital twin</span>
-      <span class="st st3">Inter-IIT volleyball</span>
+      <span class="st st3">Volleyball</span>
       <svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 2 L58 38 L96 30 L64 52 L84 86 L50 64 L16 86 L36 52 L4 30 L42 38 Z" fill="var(--lime)" stroke="var(--edge)" stroke-width="4" stroke-linejoin="round"/></svg>
     </figure>
   </div>
@@ -363,11 +363,11 @@ footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:14px}
     <div class="l">
       <span class="pill" style="background:var(--card);color:var(--ink);align-self:flex-start">Sports</span>
       <h3>Volleyball is my thing.</h3>
-      <p>From inter-hostel games to the Inter-IIT squad: setting up plays, captaining teams and showing up for every practice.</p>
+      <p>From inter-hostel games to the Inter-IIT probables: setting up plays, captaining teams and showing up for every practice.</p>
       <svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="#151311" stroke-width="4"><circle cx="50" cy="50" r="44" fill="#fffaf1"/><path d="M50 50C42 38 38 22 42 6M50 50C64 46 80 52 92 62M50 50C46 64 34 78 18 84M62 8C56 22 58 36 66 46M94 46C80 42 68 46 58 56M24 22C34 34 40 50 40 64"/></svg>
     </div>
     <div class="r">
-      <div class="medal"><div class="m" style="background:var(--lime)">GOLD</div><div><b>Inter-IIT 2025 · volleyball probables</b><span>Selected for the IIT Madras squad that won gold undefeated, without dropping a set.</span></div></div>
+      <div class="medal"><div class="m" style="background:var(--lime)">TOP 14</div><div><b>Inter-IIT 2025 · volleyball probables</b><span>One of 14 probables for the IIT Madras team; the final 12 went on to win gold undefeated, without dropping a set.</span></div></div>
       <div class="medal"><div class="m" style="background:var(--sky)">4th</div><div><b>Jimmy George'25 Tournament</b><span>Organised by the Tamil Nadu Volleyball Association.</span></div></div>
       <div class="medal"><div class="m" style="background:var(--tang)">C</div><div><b>Captain, Mechanical · IDL'25</b><span>Led the department team to 4th in the Inter-Departmental League; also captained MEA volleyball to 1st.</span></div></div>
       <div class="medal"><div class="m" style="background:var(--pink)">3rd</div><div><b>Schroeters bronze with Tapti</b><span>Inter-hostel championship, competed twice. Plus 3rd in MEA badminton.</span></div></div>
@@ -421,22 +421,22 @@ const T=[
   {t:'English to Telugu Translation',y:'Self',by:'Transformer',b:['Transformer encoder-decoder trained on the OPUS-100 corpus.','BPE tokenisation, positional encoding, multi-head attention, six stacked encoder blocks.'],g:['Transformers','PyTorch','NLP']},
   {t:'Real-Time Hand Gesture Recognition',y:'Self',by:'Computer vision',k:'~81% accuracy, 6 classes',b:['Pre-processed 1.2k+ images with skin segmentation, morphology and normalisation.','HOG features with a linear classifier, validated with a confusion matrix.'],g:['OpenCV','HOG','scikit-learn']},
   {t:'Next-Word Prediction',y:'Self',by:'NLP',b:['LSTM encoder-decoder for smooth inline autocompletion.','Tokenisation, seq2seq generation and one-hot encoding.'],g:['LSTM','TensorFlow']},
-  {t:'Botman Begins: GenAI Competition',y:'Competition',by:'Product case study',b:['Scoped an end-to-end GenAI assistant: user journeys, prompt flows and model parameters for low latency.','Benchmarked rival tools, prioritised the backlog by impact vs effort, and tested wireframes with target users.'],g:['Product','GenAI','Wireframes']}
+  a
  ]}
 ];
 document.getElementById('ptracks').innerHTML=T.map(tr=>'<div class="track"><div class="th"><h3 style="background:'+tr.bg+'">'+esc(tr.name)+'</h3><p>'+esc(tr.blurb)+'</p><span class="n">'+tr.p.length+' projects</span></div><div class="pg">'+tr.p.map(p=>'<article class="box pc"><div class="meta"><span class="pill" style="background:'+TY[p.y]+'">'+p.y+'</span><span class="by">'+esc(p.by)+'</span>'+(p.w?'<span class="wip">in progress</span>':'')+'</div><h3>'+esc(p.t)+'</h3>'+(p.k?'<span class="kpi" style="background:'+tr.bg+'">'+esc(p.k)+'</span>':'')+'<ul>'+p.b.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><div class="tags">'+p.g.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div></article>').join('')+'</div></div>').join('');
 
 const Y=[
- {y:'2026 →',s:'Third year',r:[
+ {y:'2026 →',s:'Fourth year',r:[
   {lg:'TAPTI',c:'var(--lime)',role:'Hostel Legislator',org:'Tapti Hostel · Student Legislative Council',d:'May 2026 – present',b:['Elected to the Student Legislative Council for 370+ residents, which oversees ₹3.5 Cr+ of student funds.','Supervise the Tapti Hostel Council of 6 elected secretaries and a manager, and the hostel’s yearly budget.','Vote on institute agendas, bills and resolutions that shape student policy.'],n:[['370+','residents'],['₹3.5 Cr+','student funds'],['6','secretaries']]}
  ]},
- {y:'2025–26',s:'Second year',r:[
+ {y:'2025–26',s:'Third year',r:[
   {lg:'MEA',c:'var(--tang)',role:'Secretary',org:'Mechanical Engineering Association',d:'Jun 2025 – May 2026',b:['Led a 4-tier, 80+ member team running 5 major events for 1,500+ students.','Organised the department tech fest end to end: 3,000+ participants on an ₹8L+ budget.'],n:[['80+','team'],['3,000+','fest participants'],['₹8L+','budget']]},
   {lg:'CMGFS',c:'var(--sky)',role:'Manager',org:'Committee for Monitoring General Facilities for Students',d:'Jun 2025 – May 2026',b:['Led 32 members running 40+ student facilities between the administration and 11,000+ students.','Negotiated with KFC and Domino’s to come on campus at student-friendly prices.'],n:[['₹12L','annual budget'],['40+','facilities'],['11,000+','students']]},
   {lg:'SAAR<br>ANG',c:'var(--pink)',role:'Security & Safety Manager',org:'Saarang, IIT Madras’s cultural fest',d:'Jun 2025 – May 2026',b:['Led 30+ coordinators and 120+ volunteers for an 80K+ attendee fest: crowd flow, parking, buses and transport for 60,000+.','Coordinated 100+ police, 300+ security staff and 15+ vendors; got 14+ metal detectors (₹20,520) sponsored.'],n:[['80K+','attendees'],['₹10L+','logistics budget'],['420+','police & security']]},
   {lg:'SOC',c:'var(--lilac)',role:'Sponsorship Core',org:'SOC (sports)',d:'Jun 2025 – May 2026',b:['Led a team of 6 pitching to 80+ potential sponsors.','Raised ₹20K+ cash and ₹30K+ in equipment by engaging alumni, plus ₹10K+ in Decathlon coupons.'],n:[['₹50K+','cash + equipment'],['80+','sponsors pitched']]}
  ]},
- {y:'2024–25',s:'First year',r:[
+ {y:'2024–25',s:'Second year',r:[
   {lg:'NIR<br>MAAN',c:'var(--lime)',role:'Outreach Coordinator',org:'Nirmaan, IIT Madras pre-incubator',d:'Jun 2024 – May 2025',b:['Directed media outreach: recorded and published 5 founder podcast episodes, and hosted GrowXCD’s CEO myself.','Pitched Nirmaan at INVENTIV’25 to 100+ professors and founders from IITs and NITs, securing on-the-spot collaborations.','Handled guests and speakers at Nirmaan Demo Day’25, meeting 50+ early-stage founders.'],n:[['5','podcasts'],['100+','pitched to'],['50+','founders met']]}
  ]}
 ];
