@@ -170,7 +170,7 @@ nav .btn{min-height:40px;padding:0 16px;box-shadow:none;font-size:14.5px}
 .vb .l{background:var(--tang);color:var(--onacc);padding:clamp(24px,4vw,40px);border-right:2.5px solid var(--edge);position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px}
 .vb .l h3{font-size:clamp(28px,4vw,46px);font-weight:900;line-height:1}
 .vb .l p{font-weight:600;max-width:40ch}
-.vb .l svg{position:absolute;right:-40px;bottom:-40px;width:220px;height:220px;opacity:.9}
+.vb .l .ball{position:absolute;right:28px;bottom:28px;width:clamp(110px,14vw,160px);height:auto;filter:drop-shadow(5px 5px 0 #151311);transform:rotate(-12deg)}.vb .l p{position:relative;z-index:1}@media(max-width:900px){.vb .l{padding-bottom:150px}.vb .l .ball{width:110px;right:22px;bottom:22px}}
 .vb .r{padding:clamp(20px,3vw,32px);display:grid;gap:12px;align-content:center}
 .medal{display:flex;gap:14px;align-items:center;border:2px solid var(--edge);border-radius:14px;padding:12px 14px;background:var(--bg)}
 .medal .m{flex:none;min-width:64px;height:48px;padding:0 8px;border:2.5px solid var(--edge);border-radius:12px;display:grid;place-items:center;font-family:Unbounded,sans-serif;font-weight:900;font-size:15px;color:var(--onacc)}
@@ -364,7 +364,7 @@ footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:14px}
       <span class="pill" style="background:var(--card);color:var(--ink);align-self:flex-start">Sports</span>
       <h3>Volleyball is my thing.</h3>
       <p>From inter-hostel games to the Inter-IIT probables: setting up plays, captaining teams and showing up for every practice.</p>
-      <svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="#151311" stroke-width="4"><circle cx="50" cy="50" r="44" fill="#fffaf1"/><path d="M50 50C42 38 38 22 42 6M50 50C64 46 80 52 92 62M50 50C46 64 34 78 18 84M62 8C56 22 58 36 66 46M94 46C80 42 68 46 58 56M24 22C34 34 40 50 40 64"/></svg>
+      <svg class="ball" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#151311" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="#fffaf1"/><path d="M11.1 7.1a16.55 16.55 0 0 1 10.9 4"/><path d="M12 12a12.6 12.6 0 0 1-8.7 5"/><path d="M16.8 13.6a16.55 16.55 0 0 1-9 7.5"/><path d="M20.7 17a12.8 12.8 0 0 0-8.7-5 13.3 13.3 0 0 1 0-10"/><path d="M6.3 3.8a16.55 16.55 0 0 0 1.9 11.5"/></svg>
     </div>
     <div class="r">
       <div class="medal"><div class="m" style="background:var(--lime)">TOP 14</div><div><b>Inter-IIT 2025 · volleyball probables</b><span>One of 14 probables for the IIT Madras team; the final 12 went on to win gold undefeated, without dropping a set.</span></div></div>
