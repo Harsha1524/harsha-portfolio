@@ -3,316 +3,362 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Harsha · Portfolio</title>
-<meta name="description" content="Harsha — Mechanical Engineering at IIT Madras. Digital twins, design automation, software and machine learning.">
+<title>Harsha · IIT Madras</title>
+<meta name="description" content="Harsha — student at IIT Madras. Mechanical engineering, software and data: digital twins, CAD automation, full-stack and ML.">
+<meta property="og:title" content="Harsha · Student at IIT Madras">
+<meta property="og:description" content="Mechanical engineer who ships code. Digital twins, CAD automation, full-stack and data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-/* VOICE: confident, precise, a little playful — an engineer's personal site.
-   IDEA: an engineering drawing sheet — linework, dimension lines, a title block.
-   PICTURE: an end mill drawn solid on the left and its dashed "digital twin" on the right, linked by data.
-   COLOUR and TYPE: white sheet, drafting-ink navy, line blue, one orange accent; Archivo throughout.
-   LAYOUT: sticky nav, hero composition with title block, then bands: work, projects, leadership, contact. */
+/* VOICE: gen-z zine. Loud, warm, confident, a bit cheeky, still easy to scan for a recruiter.
+   IDEA: a sticker-bombed notebook page. Thick ink outlines, hard offset shadows, tilted stickers, a ticker tape.
+   PICTURE: the photo in a tilted polaroid frame with stickers slapped on it; the cream wall in the photo is the page colour.
+   COLOUR and TYPE: warm paper, near-black ink, acid lime as the highlighter, hot pink, tangerine and lilac for the three tracks. Unbounded + DM Sans.
+   LAYOUT: sticky pill nav, hero (copy + polaroid), ticker, experience, three project tracks, PORs, achievements, contact. */
 :root{color-scheme:light dark;
-  --bg:light-dark(#fbfcfe,#0b1424);--panel:light-dark(#ffffff,#111d33);
-  --ink:light-dark(#10223f,#e6edfb);--soft:light-dark(#4a5a76,#a7b5cf);
-  --line:light-dark(#1f4fd1,#7fa2ff);--grid:light-dark(#e3e9f5,#18264073);
-  --rule:light-dark(#cdd7ea,#263656);--acc:#ff5a1f;--accink:light-dark(#c63d0a,#ff8a5c)}
+  --bg:light-dark(#f3ecdf,#14120f);--card:light-dark(#fffaf1,#1f1c18);
+  --ink:light-dark(#151311,#f3ecdf);--soft:light-dark(#5b544b,#b8ae9f);
+  --edge:light-dark(#151311,#f3ecdf);
+  --lime:#d4ff3a;--pink:#ff5fa2;--tang:#ff7a1a;--lilac:#c3b2ff;--sky:#7fe0ff;
+  --onacc:#151311;--sh:5px 5px 0 var(--edge)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Archivo,system-ui,sans-serif;overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:-1;
+  background-image:radial-gradient(color-mix(in srgb,var(--ink) 13%,transparent) 1px,transparent 1.2px);background-size:22px 22px}
 a{color:inherit}
-h1,h2,h3{margin:0;line-height:1.08;text-wrap:balance}
-h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.01em}
-h3{font-size:19px;font-weight:600}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;font-family:Unbounded,system-ui,sans-serif;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(30px,4.6vw,52px);font-weight:900;letter-spacing:-.02em}
+h3{font-size:18px;font-weight:700;line-height:1.2}
 p{margin:0}
-.wrap{max-width:1240px;margin:0 auto}
-.band{padding:clamp(40px,6vw,88px) max(5vw,16px);border-top:1px solid var(--rule)}
-.lede{color:var(--soft);max-width:62ch;margin-top:12px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(4vw,16px)}
+section{padding:clamp(48px,7vw,96px) 0}
+.kick{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;border:2px solid var(--edge);border-radius:999px;padding:4px 12px;background:var(--card);margin-bottom:14px}
+.kick i{width:9px;height:9px;border-radius:50%;background:var(--tang);display:inline-block}
+.sub{color:var(--soft);max-width:60ch;margin-top:12px;font-size:17px}
+.mark{background:linear-gradient(transparent 12%,var(--lime) 12%,var(--lime) 88%,transparent 88%);color:var(--onacc);padding:0 .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.box{background:var(--card);border:2.5px solid var(--edge);border-radius:18px;box-shadow:var(--sh)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border:2.5px solid var(--edge);border-radius:999px;font-weight:700;text-decoration:none;background:var(--card);box-shadow:4px 4px 0 var(--edge);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--edge)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--edge)}
+.btn.go{background:var(--lime);color:var(--onacc)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
 
 /* nav */
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
-nav .wrap{display:flex;align-items:center;gap:8px;padding:10px max(5vw,16px);flex-wrap:wrap}
-.mark{font-weight:800;font-size:18px;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:8px}
-.mark i{width:12px;height:12px;border:2.5px solid var(--acc);border-radius:50%;display:inline-block}
-nav a.l{text-decoration:none;color:var(--soft);padding:10px 10px;border-radius:8px;font-weight:500;font-size:15px}
-nav a.l:hover,nav a.l:focus-visible{color:var(--ink);background:var(--grid)}
+nav{position:sticky;top:12px;z-index:20;margin:12px auto 0;max-width:1200px;padding:0 max(4vw,16px)}
+nav .in{display:flex;align-items:center;gap:4px;flex-wrap:wrap;background:var(--card);border:2.5px solid var(--edge);border-radius:999px;padding:6px 6px 6px 18px;box-shadow:4px 4px 0 var(--edge)}
+.logo{font-family:Unbounded,sans-serif;font-weight:900;font-size:19px;text-decoration:none;margin-right:auto}
+.logo b{color:var(--tang)}
+nav a.l{text-decoration:none;font-weight:600;font-size:15px;padding:9px 12px;border-radius:999px}
+nav a.l:hover{background:var(--lime);color:var(--onacc)}
+nav .btn{min-height:40px;padding:0 16px;box-shadow:none;font-size:14.5px}
 
 /* hero */
-.hero{position:relative;padding:clamp(32px,5vw,72px) max(5vw,16px) clamp(32px,4vw,56px);
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
-.hero .wrap:first-child{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center}
-.hero h1{font-size:clamp(48px,7vw,84px);font-weight:800;letter-spacing:-.02em}
-.hero .role{font-size:clamp(19px,2vw,23px);font-weight:500;margin-top:14px;max-width:30ch}
-.hero .lede{margin-top:16px}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink);font-size:15.5px}
-.btn.p{background:var(--ink);color:var(--bg)}
-.btn:hover{transform:translateY(-1px)}
-.btn:focus-visible,.chip:focus-visible,nav a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
-.sheet{position:relative;background:var(--panel);border:2px solid var(--ink);border-radius:4px;box-shadow:10px 10px 0 color-mix(in srgb,var(--line) 18%,transparent)}
-.sheet svg{display:block;width:100%;height:auto}
-.tb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);font-size:13px}
-.tb div{padding:8px 10px;border-left:1px solid var(--rule)}
-.tb div:first-child{border-left:0}
-.tb b{display:block;font-size:14.5px;color:var(--ink);font-weight:600}
-.tb span{color:var(--soft)}
-.draw path,.draw line,.draw circle,.draw rect,.draw polyline{vector-effect:non-scaling-stroke}
-.flow{stroke-dasharray:4 7;animation:flow 1.6s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-22}}
+.hero{padding-top:clamp(36px,6vw,80px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.badge{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--onacc);border:2.5px solid var(--edge);border-radius:14px;padding:10px 16px;font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(17px,2.2vw,24px);box-shadow:var(--sh);transform:rotate(-2deg)}
+.badge svg{flex:none}
+.hero h1{font-size:clamp(46px,8vw,104px);font-weight:900;letter-spacing:-.03em;margin-top:26px}
+.hero h1 span{color:var(--pink);-webkit-text-stroke:2px var(--edge)}
+.hero .sub{font-size:clamp(17px,1.6vw,19px);margin-top:18px;color:var(--ink)}
+.hero .sub em{font-style:normal;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{border:2px solid var(--edge);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:600;background:var(--card);white-space:nowrap}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
-/* facts strip */
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:clamp(28px,4vw,48px);border:2px solid var(--ink);background:var(--panel)}
-.facts div{padding:16px 18px;border-left:1px solid var(--rule)}
-.facts div:first-child{border-left:0}
-.facts b{display:block;font-size:clamp(22px,2.6vw,30px);font-weight:800;line-height:1.1}
-.facts span{color:var(--soft);font-size:14px}
+.pola{position:relative;justify-self:center;width:min(100%,420px);transform:rotate(2.5deg)}
+.pola .frame{background:var(--card);border:2.5px solid var(--edge);border-radius:20px;padding:14px 14px 58px;box-shadow:10px 10px 0 var(--edge)}
+.pola .ph{aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:2px solid var(--edge);background:#efe6d3}
+.pola .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;filter:saturate(1.05) contrast(1.03)}
+.pola .cap{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-family:Unbounded,sans-serif;font-weight:700;font-size:16px}
+.st{position:absolute;border:2.5px solid var(--edge);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px;color:var(--onacc);box-shadow:3px 3px 0 var(--edge);white-space:nowrap}
+.st1{background:var(--pink);top:6%;left:-9%;transform:rotate(-10deg)}
+.st2{background:var(--lilac);top:44%;right:-10%;transform:rotate(8deg)}
+.st3{background:var(--sky);bottom:20%;left:-7%;transform:rotate(-4deg)}
+.star{position:absolute;top:-26px;right:-18px;width:74px;height:74px;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ticker */
+.tick{margin-top:clamp(40px,6vw,72px);background:var(--ink);color:var(--bg);border-block:2.5px solid var(--edge);overflow:hidden;transform:rotate(-1.2deg);width:104%;margin-left:-2%}
+.tick .tr{display:flex;width:max-content;animation:roll 32s linear infinite}
+.tick span{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(15px,1.8vw,20px);padding:14px 22px;white-space:nowrap;display:flex;align-items:center;gap:22px}
+.tick span::after{content:"";width:12px;height:12px;background:var(--lime);border-radius:3px;transform:rotate(45deg)}
+@keyframes roll{to{transform:translateX(-50%)}}
 
 /* experience */
-.xp{display:grid;gap:0;margin-top:32px;border-top:2px solid var(--ink)}
-.xp article{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:24px;padding:24px 0;border-bottom:1px solid var(--rule)}
-.xp .co{font-weight:800;font-size:20px;line-height:1.2}
-.xp .tm{color:var(--soft);font-size:14.5px;margin-top:4px}
-.xp p{color:var(--soft);max-width:68ch}
-.xp p strong{color:var(--ink)}
-.big{display:inline-flex;align-items:baseline;gap:10px;margin-bottom:8px;font-weight:800;font-size:clamp(22px,2.4vw,28px)}
-.big em{font-style:normal;color:var(--accink)}
+.xp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:36px}
+.job{padding:22px;display:flex;flex-direction:column;gap:14px}
+.job.feat{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px;align-items:stretch}
+.jh{display:flex;gap:14px;align-items:center}
+.lg{flex:none;width:58px;height:58px;border:2.5px solid var(--edge);border-radius:14px;display:grid;place-items:center;font-family:Unbounded,sans-serif;font-weight:900;font-size:15px;color:var(--onacc);letter-spacing:-.02em}
+.jh .org{font-family:Unbounded,sans-serif;font-weight:700;font-size:18px;line-height:1.2}
+.jh .role{color:var(--soft);font-size:14.5px;margin-top:2px}
+.job ul{margin:0;padding-left:20px;color:var(--soft)}
+.job li{margin:4px 0}
+.job li strong{color:var(--ink)}
+.stat{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(26px,3.4vw,40px);line-height:1}
+.stat s{text-decoration-thickness:4px;text-decoration-color:var(--pink);color:var(--soft);font-weight:700}
+.stat b{background:var(--lime);color:var(--onacc);border:2.5px solid var(--edge);border-radius:12px;padding:4px 10px}
+.layers{display:grid;gap:10px;background:var(--bg);border:2.5px solid var(--edge);border-radius:14px;padding:16px}
+.layers div{display:flex;align-items:center;gap:12px;border:2px solid var(--edge);border-radius:10px;padding:10px 12px;background:var(--card);font-weight:600;font-size:15px}
+.layers div i{flex:none;width:26px;height:26px;border-radius:7px;border:2px solid var(--edge);display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:700;color:var(--onacc)}
+.layers small{display:block;color:var(--soft);font-weight:500;font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tags span{font-size:13px;font-weight:600;border:1.5px solid var(--edge);border-radius:999px;padding:2px 10px;white-space:nowrap}
 
 /* projects */
-.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink);font:500 15px Archivo,sans-serif;cursor:pointer}
-.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:16px;margin-top:28px}
-.card{position:relative;background:var(--panel);border:1.5px solid var(--rule);border-radius:6px;padding:22px 20px 18px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s}
-.card:hover{border-color:var(--line);transform:translateY(-2px)}
-.card .k{font-size:13.5px;color:var(--line);font-weight:600}
-.card p{color:var(--soft);font-size:15.5px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
-.tags span{font-size:13px;padding:3px 9px;border-radius:999px;background:var(--grid);color:var(--ink);white-space:nowrap}
-.wip{position:absolute;top:16px;right:16px;font-size:13px;font-weight:600;color:var(--accink)}
+.ph-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:18px}
+.seg{display:inline-flex;border:2.5px solid var(--edge);border-radius:999px;background:var(--card);padding:4px;box-shadow:4px 4px 0 var(--edge)}
+.seg button{min-height:40px;padding:0 16px;border:0;border-radius:999px;background:none;color:var(--ink);font:700 14.5px "DM Sans",sans-serif;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.track{margin-top:44px}
+.th{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.th h3{font-size:clamp(22px,2.6vw,30px);font-weight:900;border:2.5px solid var(--edge);border-radius:14px;padding:8px 16px;color:var(--onacc);box-shadow:4px 4px 0 var(--edge)}
+.th p{color:var(--soft);font-size:15px}
+.th .n{margin-left:auto;font-weight:700;font-size:14px;color:var(--soft)}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,265px),1fr));gap:18px;margin-top:20px}
+.pc{position:relative;padding:20px 18px 18px;display:flex;flex-direction:column;gap:10px;border-radius:16px;transition:transform .18s,box-shadow .18s}
+.pc:hover{transform:translate(-3px,-3px) rotate(-.4deg);box-shadow:8px 8px 0 var(--edge)}
+.pc .ty{align-self:flex-start;font-size:12.5px;font-weight:700;border:2px solid var(--edge);border-radius:999px;padding:1px 10px;color:var(--onacc)}
+.pc p{color:var(--soft);font-size:15px}
+.pc .wip{position:absolute;top:18px;right:16px;font-size:12.5px;font-weight:700;color:var(--tang)}
+.empty{color:var(--soft);font-weight:600;padding:18px;border:2px dashed var(--soft);border-radius:14px}
 
-/* skills + leadership */
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px)}
-.sk{margin-top:24px;display:grid;gap:18px}
-.sk div{display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:14px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
-.sk dt{font-weight:600}
-.sk dd{margin:0;color:var(--soft)}
-.lead{margin-top:24px;display:grid;gap:16px}
-.lead article{padding:20px;border:1.5px solid var(--rule);border-radius:6px;background:var(--panel)}
-.lead p{color:var(--soft);margin-top:6px;font-size:15.5px}
+/* PORs */
+.pors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:36px}
+.por{padding:26px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.por .lg{width:72px;height:72px;font-size:20px;border-radius:18px}
+.por h3{font-size:clamp(20px,2.2vw,26px);font-weight:900}
+.por .at{color:var(--soft);font-weight:600}
+.por p{color:var(--soft)}
+.por .big{position:absolute;right:-10px;bottom:-34px;font-family:Unbounded,sans-serif;font-weight:900;font-size:120px;line-height:1;opacity:.08;pointer-events:none}
+.nums{display:flex;flex-wrap:wrap;gap:10px}
+.nums div{border:2px solid var(--edge);border-radius:12px;padding:8px 12px;background:var(--bg)}
+.nums b{display:block;font-family:Unbounded,sans-serif;font-size:22px;line-height:1.1}
+.nums span{font-size:13px;color:var(--soft)}
+
+/* achievements */
+.ach{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:18px;margin-top:36px}
+.ac{padding:22px;display:flex;flex-direction:column;gap:8px;border-radius:18px}
+.ac:nth-child(odd){transform:rotate(-1deg)}.ac:nth-child(even){transform:rotate(1deg)}
+.ac .ic{width:46px;height:46px;border:2.5px solid var(--edge);border-radius:12px;display:grid;place-items:center;margin-bottom:6px}
+.ac b{font-family:Unbounded,sans-serif;font-size:clamp(28px,3vw,36px);line-height:1}
+.ac p{color:var(--soft);font-size:15px}
 
 /* contact */
-.contact{background:var(--ink);color:var(--bg);border-top:0}
-.contact .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:center}
-.contact h2{font-size:clamp(32px,4.4vw,52px)}
-.contact p{opacity:.8;margin-top:12px;max-width:52ch}
-.contact .btn{border-color:var(--bg);color:var(--bg)}
-.contact .btn.p{background:var(--acc);border-color:var(--acc);color:#fff}
-footer{padding:20px max(5vw,16px);color:var(--soft);font-size:14px;text-align:center}
+.contact .box{padding:clamp(28px,5vw,56px);background:var(--pink);color:var(--onacc);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:center}
+.contact h2{font-size:clamp(34px,5.4vw,64px)}
+.contact p{margin-top:12px;font-size:17px;max-width:46ch}
+.contact .cta{margin:0;justify-content:flex-end}
+.contact .btn{background:#fffaf1;color:var(--onacc);border-color:#151311;box-shadow:4px 4px 0 #151311}
+.contact .btn.go{background:var(--lime)}
+footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:14px}
 
-@media(max-width:900px){.hero .wrap,.two,.contact .wrap{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:640px){
-  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(3){border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--rule)}
-  .xp article{grid-template-columns:minmax(0,1fr);gap:8px}
-  .tb{grid-template-columns:repeat(2,minmax(0,1fr))}.tb div:nth-child(3){border-left:0}.tb div:nth-child(n+3){border-top:1px solid var(--rule)}
-  nav a.l{padding:8px 7px;font-size:14px}
-  .sk div{grid-template-columns:minmax(0,1fr);gap:4px}
-}
+@media(max-width:900px){.hero .wrap,.job.feat,.contact .box{grid-template-columns:minmax(0,1fr)}.contact .cta{justify-content:flex-start}.pola{max-width:380px}}
+@media(max-width:720px){.xp,.pors{grid-template-columns:minmax(0,1fr)}nav a.l{display:none}.st1{left:-3%}.st2{right:-3%}.st3{left:-2%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<nav><div class="wrap">
-  <a class="mark" href="#top"><i></i>Harsha</a>
-  <a class="l" href="#work">Work</a>
+<nav><div class="in">
+  <a class="logo" href="#top">harsha<b>.</b></a>
+  <a class="l" href="#work">Experience</a>
   <a class="l" href="#projects">Projects</a>
-  <a class="l" href="#more">Skills</a>
-  <a class="l" href="#contact">Contact</a>
+  <a class="l" href="#pors">PORs</a>
+  <a class="l" href="#extra">Extras</a>
+  <a class="btn go" href="#contact">Say hi</a>
 </div></nav>
 
-<header class="hero" id="top"><div class="wrap">
-  <div>
-    <h1>Harsha</h1>
-    <p class="role">Mechanical engineer who builds software for machines.</p>
-    <p class="lede">Third-year B.Tech, Mechanical Engineering at IIT Madras. I work where manufacturing meets code: digital twins for legacy machine tools, CAD design automation, robotics, and the web and ML systems around them.</p>
-    <div class="cta">
-      <a class="btn p" href="#projects">See projects</a>
-      <a class="btn" href="https://www.linkedin.com/in/harsha1524" target="_blank" rel="noopener">LinkedIn ↗</a>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/><path d="M22 9v6"/></svg>Student @ IIT Madras</div>
+      <h1>Hey, I'm <span>Harsha</span></h1>
+      <p class="sub">Third-year <em>Mechanical Engineering</em> undergrad who can't stop writing code. I build <span class="mark">digital twins for old machines</span>, automate CAD so engineers don't have to, and ship web and data projects on the side.</p>
+      <div class="chips">
+        <span class="chip">B.Tech · Mechanical</span>
+        <span class="chip">BTP · Digital Twin Lab</span>
+        <span class="chip">Hostel Legislator</span>
+      </div>
+      <div class="cta">
+        <a class="btn go" href="#projects">See my work</a>
+        <a class="btn" href="https://www.linkedin.com/in/harsha1524" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/Harsha1524" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
     </div>
+    <figure class="pola" style="margin:0">
+      <div class="frame">
+        <div class="ph"><img src="/_vercel/image?url=%2FMy%2520photo.png&w=828&q=80" onerror="this.onerror=null;this.src='My%20photo.png'" alt="Portrait of Harsha in a navy blazer and white shirt" width="828" height="1035"></div>
+        <figcaption class="cap">mech × code</figcaption>
+      </div>
+      <span class="st st1">4 internships</span>
+      <span class="st st2">digital twins</span>
+      <span class="st st3">CAD automation</span>
+      <svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 2 L58 38 L96 30 L64 52 L84 86 L50 64 L16 86 L36 52 L4 30 L42 38 Z" fill="var(--lime)" stroke="var(--edge)" stroke-width="4" stroke-linejoin="round"/></svg>
+    </figure>
   </div>
-
-  <figure class="sheet" style="margin:0" aria-label="Drawing of an end mill and its dashed digital twin, linked by a data stream">
-    <svg class="draw" viewBox="0 0 560 330" role="img" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <!-- physical tool -->
-      <g stroke="var(--ink)" stroke-width="2.2">
-        <rect x="70" y="40" width="70" height="120" rx="3" fill="var(--grid)"/>
-        <rect x="84" y="160" width="42" height="34" fill="var(--panel)"/>
-        <path d="M92 194 L92 262 Q105 276 118 262 L118 194" fill="var(--panel)"/>
-        <path d="M92 206 L118 222 M92 228 L118 244 M92 250 L114 262" stroke="var(--line)" stroke-width="1.8"/>
-      </g>
-      <path d="M105 28 V286" stroke="var(--line)" stroke-width="1" stroke-dasharray="12 4 2 4"/>
-      <!-- workpiece -->
-      <rect x="40" y="276" width="130" height="22" fill="color-mix(in srgb,var(--acc) 18%,transparent)" stroke="var(--ink)" stroke-width="2"/>
-      <!-- dimension -->
-      <g stroke="var(--soft)" stroke-width="1">
-        <path d="M30 40 V160 M24 40 H62 M24 160 H62"/>
-        <path d="M30 40 l-4 9 h8 z M30 160 l-4 -9 h8 z" fill="var(--soft)"/>
-      </g>
-      <text x="18" y="104" fill="var(--soft)" font-size="12" font-family="Archivo" transform="rotate(-90 18 104)" text-anchor="middle">spindle</text>
-
-      <!-- data stream -->
-      <path class="flow" d="M150 110 C 230 110, 250 70, 330 70" stroke="var(--acc)" stroke-width="2.4"/>
-      <path class="flow" d="M150 140 C 230 140, 250 180, 330 180" stroke="var(--line)" stroke-width="2.4"/>
-      <g font-family="Archivo" font-size="12.5" fill="var(--ink)">
-        <rect x="196" y="76" width="92" height="22" rx="11" fill="var(--panel)" stroke="var(--acc)"/>
-        <text x="242" y="91" text-anchor="middle">DAQ · sensors</text>
-        <rect x="196" y="160" width="92" height="22" rx="11" fill="var(--panel)" stroke="var(--line)"/>
-        <text x="242" y="175" text-anchor="middle">EKF fusion</text>
-      </g>
-
-      <!-- twin -->
-      <g stroke="var(--line)" stroke-width="2" stroke-dasharray="6 5">
-        <rect x="350" y="40" width="70" height="120" rx="3"/>
-        <rect x="364" y="160" width="42" height="34"/>
-        <path d="M372 194 L372 262 Q385 276 398 262 L398 194"/>
-      </g>
-      <!-- live readout -->
-      <g font-family="Archivo">
-        <rect x="440" y="52" width="104" height="132" rx="6" fill="var(--panel)" stroke="var(--rule)" stroke-width="1.5"/>
-        <text x="452" y="74" font-size="12" fill="var(--soft)">twin state</text>
-        <polyline points="452,112 466,100 480,106 494,88 508,96 522,80 532,86" stroke="var(--acc)" stroke-width="2"/>
-        <rect x="452" y="128" width="80" height="7" rx="3.5" fill="var(--grid)"/>
-        <rect x="452" y="128" width="54" height="7" rx="3.5" fill="var(--line)"/>
-        <rect x="452" y="146" width="80" height="7" rx="3.5" fill="var(--grid)"/>
-        <rect x="452" y="146" width="30" height="7" rx="3.5" fill="var(--acc)"/>
-        <text x="452" y="174" font-size="12" fill="var(--soft)">monitoring</text>
-      </g>
-      <text x="385" y="300" font-family="Archivo" font-size="13" fill="var(--line)" text-anchor="middle" font-weight="600">digital twin</text>
-      <text x="105" y="318" font-family="Archivo" font-size="13" fill="var(--ink)" text-anchor="middle" font-weight="600">legacy machine</text>
-    </svg>
-    <div class="tb">
-      <div><span>Drawn by</span><b>Harsha</b></div>
-      <div><span>Discipline</span><b>Mechanical</b></div>
-      <div><span>Institute</span><b>IIT Madras</b></div>
-      <div><span>Sheet</span><b>1 of 1</b></div>
-    </div>
-  </figure>
-</div>
-
-<div class="wrap"><div class="facts">
-  <div><b>4</b><span>industry internships</span></div>
-  <div><b>2 days → 20 min</b><span>tooling design time at Bajaj Auto</span></div>
-  <div><b>15+</b><span>projects across hardware, web and ML</span></div>
-  <div><b>BTP</b><span>Digital Twin &amp; Autonomous Factory Lab</span></div>
-</div></div>
+  <div class="tick" aria-hidden="true"><div class="tr" id="tick"></div></div>
 </header>
 
-<section class="band" id="work"><div class="wrap">
-  <h2>Experience</h2>
-  <p class="lede">Shop floors, design offices and a research lab.</p>
+<section id="work"><div class="wrap">
+  <span class="kick"><i></i>Experience</span>
+  <h2>Where I've put in the hours</h2>
+  <p class="sub">A research lab, a design office and three shop floors.</p>
   <div class="xp">
-    <article>
-      <div><div class="co">Digital Twin &amp; Autonomous Factory Lab, IIT Madras</div><div class="tm">B.Tech Project · with Prof. G. L. Samuel</div></div>
-      <div><p><strong>Digital twin for a legacy CNC micro-milling machine.</strong> The machine runs on an old Windows-based controller with no native data interface, so the core problem is getting live data out of it at all. I'm building a four-layer architecture — data acquisition and communication, a physics-based model, sensor fusion with an Extended Kalman Filter, and a monitoring service — mapped from the research literature.</p></div>
+    <article class="box job feat">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="jh"><div class="lg" style="background:var(--lime)">DT</div><div><div class="org">B.Tech Project · IIT Madras</div><div class="role">Digital Twin &amp; Autonomous Factory Lab · Prof. G. L. Samuel</div></div></div>
+        <h3 style="font-size:clamp(20px,2.4vw,26px)">Digital twin for a legacy CNC micro-milling machine</h3>
+        <ul>
+          <li>The machine runs an <strong>old Windows-based controller with no data interface</strong>. Step one is getting live data out of it at all.</li>
+          <li>Designing a <strong>four-layer twin</strong>, mapped from the research literature.</li>
+          <li>Aimed at real-time monitoring of an older machine without replacing its controller.</li>
+        </ul>
+        <div class="tags"><span>Digital twin</span><span>EKF</span><span>Data acquisition</span><span>Physics modelling</span><span>Research</span></div>
+      </div>
+      <div class="layers" aria-label="Four layers of the digital twin">
+        <div><i style="background:var(--tang)">1</i><span>Data acquisition &amp; comms<small>pull signals off the legacy controller</small></span></div>
+        <div><i style="background:var(--pink)">2</i><span>Physics-based model<small>how the spindle and cut should behave</small></span></div>
+        <div><i style="background:var(--lilac)">3</i><span>Sensor fusion (EKF)<small>blend model and measurement into one state</small></span></div>
+        <div><i style="background:var(--lime)">4</i><span>Monitoring service<small>live state for the operator</small></span></div>
+      </div>
     </article>
-    <article>
-      <div><div class="co">Bajaj Auto Ltd.</div><div class="tm">Intern · M&amp;AT Design Automation, Akurdi</div></div>
-      <div><div class="big"><em>~2 days</em> → 20 minutes</div><p>Built a <strong>VB.NET Windows Forms application on the Solid Edge COM API</strong> that automates boring-bar tooling design end to end: parametric 3D geometry, assembly constraints, draft and drawing generation, and PMI dimensioning.</p></div>
+
+    <article class="box job">
+      <div class="jh"><div class="lg" style="background:var(--sky)">BA</div><div><div class="org">Bajaj Auto Ltd.</div><div class="role">Intern · M&amp;AT Design Automation · Akurdi, Pune</div></div></div>
+      <div class="stat"><s>~2 days</s><span aria-hidden="true">→</span><b>20 min</b></div>
+      <ul>
+        <li>Built a <strong>VB.NET Windows Forms app on the Solid Edge COM API</strong> that automates boring-bar tooling design end to end.</li>
+        <li>Parametric 3D geometry, assembly constraints, draft and drawing generation, PMI dimensioning.</li>
+      </ul>
+      <div class="tags"><span>VB.NET</span><span>Solid Edge API</span><span>CAD automation</span></div>
     </article>
-    <article>
-      <div><div class="co">Inbound Aerospace</div><div class="tm">Intern</div></div>
-      <div><p>Engineering internship with an aerospace company.</p></div>
+
+    <article class="box job">
+      <div class="jh"><div class="lg" style="background:var(--lilac)">IA</div><div><div class="org">Inbound Aerospace</div><div class="role">Engineering intern</div></div></div>
+      <ul><li>Internship with an aerospace company.</li></ul>
+      <div class="tags"><span>Aerospace</span></div>
     </article>
-    <article>
-      <div><div class="co">BHEL</div><div class="tm">Industrial training</div></div>
-      <div><p>Hands-on exposure to heavy manufacturing at Bharat Heavy Electricals Limited.</p></div>
+
+    <article class="box job">
+      <div class="jh"><div class="lg" style="background:var(--tang)">BHEL</div><div><div class="org">BHEL</div><div class="role">Industrial trainee</div></div></div>
+      <ul><li>Industrial training at Bharat Heavy Electricals Limited, seeing large-scale manufacturing up close.</li></ul>
+      <div class="tags"><span>Heavy manufacturing</span></div>
     </article>
-    <article>
-      <div><div class="co">Manjira Machine Builders</div><div class="tm">Intern</div></div>
-      <div><p>Internship at a machine-building firm.</p></div>
+
+    <article class="box job">
+      <div class="jh"><div class="lg" style="background:var(--pink)">MMB</div><div><div class="org">Manjira Machine Builders</div><div class="role">Intern</div></div></div>
+      <ul><li>Internship at a machine-building firm.</li></ul>
+      <div class="tags"><span>Machine building</span></div>
     </article>
   </div>
 </div></section>
 
-<section class="band" id="projects"><div class="wrap">
-  <div class="head">
-    <div><h2>Projects</h2><p class="lede">Filter by what you're hiring for.</p></div>
-    <div class="chips" role="group" aria-label="Filter projects">
-      <button class="chip" data-f="all" aria-pressed="true">All</button>
-      <button class="chip" data-f="mfg" aria-pressed="false">Manufacturing &amp; robotics</button>
-      <button class="chip" data-f="sw" aria-pressed="false">Software</button>
-      <button class="chip" data-f="ml" aria-pressed="false">Machine learning</button>
+<section id="projects"><div class="wrap">
+  <div class="ph-head">
+    <div><span class="kick"><i></i>Projects</span><h2>Stuff I've built</h2><p class="sub">Self projects and course projects, sorted into three tracks.</p></div>
+    <div class="seg" role="group" aria-label="Filter projects">
+      <button data-f="all" aria-pressed="true">All</button>
+      <button data-f="Self" aria-pressed="false">Self</button>
+      <button data-f="Course" aria-pressed="false">Course</button>
     </div>
   </div>
-  <div class="grid" id="grid"></div>
+  <div id="tracks"></div>
 </div></section>
 
-<section class="band" id="more"><div class="wrap two">
-  <div>
-    <h2>Toolkit</h2>
-    <dl class="sk">
-      <div><dt>Languages</dt><dd>Python, SQL, JavaScript, VB.NET</dd></div>
-      <div><dt>Web</dt><dd>React, Vite, Tailwind, Node.js, Express, PostgreSQL, Redis</dd></div>
-      <div><dt>ML / DL</dt><dd>LSTMs, transformers (BERT, NMT), GANs, LLM fine-tuning, computer vision</dd></div>
-      <div><dt>Engineering</dt><dd>Solid Edge &amp; COM API automation, Tecnomatix simulation, CMM inspection planning, fatigue analysis</dd></div>
-      <div><dt>Analytics</dt><dd>Excel (pivots, lookups, SUMIFS), SQL</dd></div>
-      <div><dt>Practice</dt><dd>Competitive programming on Codeforces; working through Striver's A2Z DSA sheet</dd></div>
-    </dl>
+<section id="pors"><div class="wrap">
+  <span class="kick"><i></i>Positions of responsibility</span>
+  <h2>Leading on campus</h2>
+  <div class="pors">
+    <article class="box por">
+      <div class="lg" style="background:var(--lime)">TH</div>
+      <div><h3>Hostel Legislator</h3><div class="at">Tapti Hostel · IIT Madras</div></div>
+      <p>Elected to represent Tapti Hostel in student governance: carrying residents' issues to the legislature and helping shape hostel and institute policy.</p>
+      <span class="big" aria-hidden="true">TAPTI</span>
+    </article>
+    <article class="box por">
+      <div class="lg" style="background:var(--pink)">N</div>
+      <div><h3>Core Team, Outreach</h3><div class="at">Nirmaan · IIT Madras pre-incubator</div></div>
+      <p>Directed media outreach for Nirmaan: podcasts with founders, representing Nirmaan at INVENTIV'25 and running speaker logistics at Demo Day'25.</p>
+      <div class="nums"><div><b>5</b><span>podcast episodes</span></div><div><b>100+</b><span>profs and founders pitched to</span></div><div><b>50+</b><span>founders met at Demo Day</span></div></div>
+      <span class="big" aria-hidden="true">NIRMAAN</span>
+    </article>
   </div>
-  <div>
-    <h2>Leadership</h2>
-    <div class="lead">
-      <article><h3>Hostel Legislator, Tapti Hostel</h3><p>Elected representative for Tapti Hostel in IIT Madras student governance.</p></article>
-      <article><h3>Core Team, Outreach — Nirmaan</h3><p>Ran media outreach for IIT Madras's pre-incubator. Recorded and published five podcast episodes with founders, pitched Nirmaan at INVENTIV'25 to 100+ professors and founders, and coordinated speakers at Nirmaan Demo Day'25.</p></article>
+</div></section>
+
+<section id="extra"><div class="wrap">
+  <span class="kick"><i></i>Extracurriculars</span>
+  <h2>Off the syllabus</h2>
+  <div class="ach">
+    <div class="box ac" style="background:var(--lime);color:var(--onacc)"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></div><b>5 episodes</b><p style="color:inherit">Recorded and published a founder podcast series for Nirmaan, and personally hosted the CEO of GrowXCD.</p></div>
+    <div class="box ac"><div class="ic" style="background:var(--lilac)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#151311" stroke-width="2.2" stroke-linecap="round"><path d="M3 21h18M6 21V10l6-6 6 6v11"/><path d="M10 21v-5h4v5"/></svg></div><b>INVENTIV'25</b><p>Represented Nirmaan at IIT Madras's R&amp;D showcase, pitching to 100+ professors and early-stage founders from IITs and NITs.</p></div>
+    <div class="box ac"><div class="ic" style="background:var(--sky)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#151311" stroke-width="2.2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.8 6 5.5"/></svg></div><b>50+ founders</b><p>Coordinated guests and speakers at Nirmaan Demo Day'25 and met founders and mentors from across the ecosystem.</p></div>
+    <div class="box ac" style="background:var(--tang);color:var(--onacc)"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><b>Codeforces</b><p style="color:inherit">Competitive programmer, currently working through Striver's A2Z DSA sheet end to end.</p></div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div class="box">
+    <div><h2>Let's build something cool.</h2><p>Open to roles in core mechanical, software, data and product. DMs are open.</p></div>
+    <div class="cta">
+      <a class="btn go" href="https://www.linkedin.com/in/harsha1524" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/Harsha1524" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </div>
 </div></section>
-
-<section class="band contact" id="contact"><div class="wrap">
-  <div>
-    <h2>Let's build something.</h2>
-    <p>Open to roles in product, software, data and core engineering. The quickest way to reach me is LinkedIn.</p>
-  </div>
-  <div class="cta" style="margin:0">
-    <a class="btn p" href="https://www.linkedin.com/in/harsha1524" target="_blank" rel="noopener">Message on LinkedIn ↗</a>
-    <a class="btn" href="#top">Back to top</a>
-  </div>
-</div></section>
-<footer>© 2026 Harsha · IIT Madras</footer>
+<footer>made with too much chai · © 2026 Harsha · IIT Madras</footer>
 
 <script>
 {
-const P=[
- {c:'mfg',k:'Research · BTP',t:'Digital Twin for CNC Micro-Milling',d:'Live data extraction from a legacy controller, physics model, EKF sensor fusion and a monitoring layer.',g:['Digital twin','EKF','DAQ'],w:1},
- {c:'mfg',k:'Internship · Bajaj Auto',t:'Boring-Bar Design Automation',d:'Solid Edge COM API app that turns a ~2-day tooling design job into about 20 minutes.',g:['VB.NET','Solid Edge','CAD automation']},
- {c:'mfg',k:'Course project',t:'Autonomous Mecanum-Wheel Robot',d:'Omnidirectional robot navigating with IMU and IR sensing.',g:['Robotics','IMU','Embedded']},
- {c:'mfg',k:'Project',t:'Learning-Based Mobile Manipulator',d:'Simulated AMR with an arm and gripper camera that learns to move an object from A to B in a room.',g:['Robotics','Computer vision','Simulation'],w:1},
- {c:'mfg',k:'AI in Manufacturing',t:'Image-to-CAD Reverse Engineering',d:'Top-view photo of an extruded part in, dimensioned CAD model out — aimed at reverse-engineering parts.',g:['Computer vision','CAD','Python'],w:1},
- {c:'mfg',k:'Product Design · group',t:'Self-Aligning Welding Fixture',d:'Ball-wheel fixture that self-aligns pipes and cones for welding, developed from a House of Quality.',g:['Product design','QFD']},
- {c:'mfg',k:'Metrology',t:'CMM Inspection Plan',d:'Inspection plan for the outer geometry of a spindle on a coordinate measuring machine.',g:['CMM','GD&T']},
- {c:'sw',k:'Backend',t:'URL Shortener with Caching & Rate Limiting',d:'Base62 short links on Postgres with Redis caching, rate limiting and async click analytics via a job queue.',g:['Node.js','Express','PostgreSQL','Redis']},
- {c:'sw',k:'Web app',t:'Splitwise-Style Expense Splitter',d:'Group expense tracking and settle-up, deployed on Vercel.',g:['React','Vite','Tailwind']},
- {c:'sw',k:'Data / LLM',t:'NL2SQL Business Intelligence Agent',d:'Ask business questions in plain English; get SQL and answers back.',g:['LLMs','SQL','Python'],w:1},
- {c:'ml',k:'Computer vision',t:'PPE Guard',d:'Detects PPE compliance on the shop floor and identifies workers by face.',g:['Object detection','Face ID']},
- {c:'ml',k:'LLMs',t:'Fine-Tuned Mistral 7B',d:'Fine-tuning a 7B open-weights language model for a downstream task.',g:['LLM','Fine-tuning']},
- {c:'ml',k:'NLP',t:'English → Telugu Translation',d:'Neural machine translation model for English to Telugu.',g:['NMT','Seq2seq']},
- {c:'ml',k:'NLP',t:'BERT Spell Checker',d:'Context-aware spelling correction using BERT.',g:['BERT','Transformers']},
- {c:'ml',k:'NLP',t:'LSTM Next-Word Prediction',d:'Language model that suggests the next word as you type.',g:['LSTM']},
- {c:'ml',k:'Vision',t:'Hand Gesture Recognition',d:'Classifies hand gestures from camera input.',g:['CNN','OpenCV']},
- {c:'ml',k:'Generative',t:'Photo Colourisation (DeOldify)',d:'GAN-based colourisation of black-and-white photos.',g:['GAN']},
- {c:'ml',k:'Theory',t:'Neural Tangent Kernel Study',d:'Exploring how wide networks train through the lens of NTK theory.',g:['DL theory']}
+const words=['Digital twins','CAD automation','Robotics','Full-stack','Data analytics','Machine learning','Student @ IIT Madras','Mechanical engineering'];
+const tick=document.getElementById('tick');
+tick.innerHTML=words.concat(words).map(w=>'<span>'+w+'</span>').join('');
+
+const T=[
+ {id:'mech',name:'Mechanical',bg:'var(--tang)',blurb:'Robots, fixtures, metrology and CAD.',p:[
+  {t:'Learning-Based Mobile Manipulator',y:'Self',d:'Simulated AMR with an arm and a gripper camera that learns to carry an object from A to B in a room, instead of following a fixed program.',g:['Robotics','CAD','Vision','Simulation'],w:1},
+  {t:'Autonomous Mecanum-Wheel Robot',y:'Course',d:'Omnidirectional robot that navigates on its own using IMU and IR sensing.',g:['Mecanum drive','IMU','IR sensors']},
+  {t:'Image-to-CAD Reverse Engineering',y:'Course',d:'AI in Manufacturing: a top-view photo of an extruded part goes in, a dimensioned CAD model comes out.',g:['Computer vision','CAD','Python'],w:1},
+  {t:'Self-Aligning Welding Fixture',y:'Course',d:'Principles of Product Design group project: a ball-wheel fixture that self-aligns pipes and cones for welding, driven by a House of Quality.',g:['Product design','QFD']},
+  {t:'CMM Inspection Plan',y:'Course',d:'Manufacturing Metrology: inspection plan for the outer geometry of a spindle on a coordinate measuring machine.',g:['CMM','GD&T','Metrology']},
+  {t:'Shaft Assembly Fatigue Analysis',y:'Course',d:'Design of Machine Elements: fatigue life analysis of a shaft assembly.',g:['Machine design','Fatigue']},
+  {t:'Crankshaft Model',y:'Course',d:'Manufacturing Technology: planning and building a crankshaft model.',g:['Manufacturing']},
+  {t:'Miniature Cart Fabrication',y:'Course',d:'Designed and fabricated a miniature cart in the workshop.',g:['Fabrication','Workshop']}
+ ]},
+ {id:'sde',name:'Software (SDE)',bg:'var(--lilac)',blurb:'Backends, web apps and tools.',p:[
+  {t:'URL Shortener with Caching & Rate Limiting',y:'Self',d:'Base62 short links on PostgreSQL, Redis caching, per-client rate limiting and async click analytics through a job queue.',g:['Node.js','Express','PostgreSQL','Redis']},
+  {t:'Splitwise-Style Expense Splitter',y:'Self',d:'Track shared expenses in a group and settle up. Deployed on Vercel.',g:['React','Vite','Tailwind','Vercel']},
+  {t:'Portfolio Website',y:'Self',d:'This site: hand-written HTML and CSS, deployed from GitHub to Vercel.',g:['HTML','CSS','Vercel']}
+ ]},
+ {id:'da',name:'Data & ML (DA)',bg:'var(--lime)',blurb:'Analytics, NLP, vision and LLMs.',p:[
+  {t:'NL2SQL Business Intelligence Agent',y:'Self',d:'Ask business questions in plain English and get the SQL and the answer back.',g:['LLMs','SQL','Python'],w:1},
+  {t:'PPE Guard',y:'Course',d:'Checks PPE compliance on the shop floor and identifies workers by face.',g:['Object detection','Face recognition']},
+  {t:'Fine-Tuned Mistral 7B',y:'Self',d:'Fine-tuned a 7B open-weights language model for a downstream task.',g:['LLM','Fine-tuning']},
+  {t:'English to Telugu Translation',y:'Self',d:'Neural machine translation from English to Telugu.',g:['NMT','Seq2seq']},
+  {t:'BERT Spell Checker',y:'Self',d:'Context-aware spelling correction built on BERT.',g:['BERT','NLP']},
+  {t:'LSTM Next-Word Prediction',y:'Self',d:'A language model that suggests the next word as you type.',g:['LSTM','NLP']},
+  {t:'Hand Gesture Recognition',y:'Self',d:'Classifies hand gestures from a camera feed.',g:['CNN','OpenCV']},
+  {t:'Photo Colourisation (DeOldify)',y:'Self',d:'GAN-based colourisation of black-and-white photos.',g:['GAN','Vision']},
+  {t:'Neural Tangent Kernel Study',y:'Self',d:'How very wide networks train, seen through NTK theory.',g:['DL theory']}
+ ]}
 ];
+const tyBg={Self:'var(--sky)',Course:'var(--pink)'};
 const esc=s=>s.replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-const grid=document.getElementById('grid');
-const render=f=>{grid.innerHTML=P.filter(p=>f==='all'||p.c===f).map(p=>'<article class="card">'+(p.w?'<span class="wip">In progress</span>':'')+'<span class="k">'+esc(p.k)+'</span><h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p><div class="tags">'+p.g.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div></article>').join('')};
-let cur='all';try{cur=localStorage.getItem('pf')||'all'}catch(e){}
-const chips=[...document.querySelectorAll('.chip')];
-const set=f=>{cur=f;chips.forEach(c=>c.setAttribute('aria-pressed',c.dataset.f===f));render(f);try{localStorage.setItem('pf',f)}catch(e){}};
-chips.forEach(c=>c.addEventListener('click',()=>set(c.dataset.f)));
-set(chips.some(c=>c.dataset.f===cur)?cur:'all');
+const box=document.getElementById('tracks');
+const render=f=>{
+  box.innerHTML=T.map(tr=>{
+    const ps=tr.p.filter(p=>f==='all'||p.y===f);
+    const cards=ps.length?ps.map(p=>'<article class="box pc">'+(p.w?'<span class="wip">in progress</span>':'')+'<span class="ty" style="background:'+tyBg[p.y]+'">'+p.y+'</span><h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p><div class="tags">'+p.g.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div></article>').join(''):'<div class="empty">No '+f.toLowerCase()+' projects in this track yet.</div>';
+    return '<div class="track" id="'+tr.id+'"><div class="th"><h3 style="background:'+tr.bg+'">'+tr.name+'</h3><p>'+tr.blurb+'</p><span class="n">'+ps.length+' project'+(ps.length===1?'':'s')+'</span></div><div class="pg">'+cards+'</div></div>';
+  }).join('');
+};
+const btns=[...document.querySelectorAll('.seg button')];
+const set=f=>{btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f));render(f)};
+btns.forEach(b=>b.addEventListener('click',()=>set(b.dataset.f)));
+set('all');
 }
 </script>
 </body>
