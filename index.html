@@ -147,6 +147,7 @@ nav .btn{min-height:40px;padding:0 16px;box-shadow:none;font-size:14.5px}
 .pc ul{color:var(--soft);font-size:14.5px}
 .pc .kpi{align-self:flex-start;font-family:Unbounded,sans-serif;font-weight:700;font-size:14px;border:2px solid var(--edge);border-radius:10px;padding:4px 10px;color:var(--onacc)}
 .pc .tags{margin-top:auto;padding-top:4px}
+.pc .live{align-self:flex-start;min-height:38px;padding:0 16px;font-size:14px;box-shadow:3px 3px 0 var(--edge)}
 
 /* POR timeline */
 .tl{position:relative;margin-top:40px;display:grid;gap:34px}
@@ -411,9 +412,9 @@ const T=[
  ]},
  {name:'SDE',bg:'var(--lilac)',blurb:'Backends, systems and full-stack.',p:[
   {t:'Event & Media Management Platform',y:'Internship',by:'Teachnook · 2023',b:['Full-stack event photography platform: Next.js 14, Express, PostgreSQL with Prisma, role-based access, bulk uploads and QR guest sharing.','AWS Rekognition face search and moderation, Sharp image pipeline, Socket.IO notifications, JWT auth, Docker.'],g:['Next.js','Express','PostgreSQL','AWS','Docker']},
-  {t:'URL Shortener with Caching & Rate Limiting',y:'Self',by:'Dec 2025',b:['Node.js/Express and PostgreSQL with Base62 codes; Redis caching cuts database reads for hot URLs.','Rate limiting, plus async click analytics on a job queue so tracking never slows the redirect.'],g:['Node.js','PostgreSQL','Redis']},
-  {t:'Mini Redis: In-Memory Key-Value Store',y:'Self',by:'Jan 2026',b:['TCP server implementing a simplified Redis clone.','Custom hash map and LRU eviction built from a doubly linked list and a hash map.'],g:['C++','TCP','Data structures']},
-  {t:'Library Management System',y:'Self',by:'Apr 2025',b:['Object-oriented design with modular classes for books, members and transactions.','Issue/return tracking and fine calculation through inheritance and polymorphism.'],g:['OOP','C++']}
+  {t:'URL Shortener with Caching & Rate Limiting',y:'Self',by:'Dec 2025',b:['Node.js/Express and PostgreSQL with Base62 codes; Redis caching cuts database reads for hot URLs.','Rate limiting, plus async click analytics on a job queue so tracking never slows the redirect.'],g:['Node.js','PostgreSQL','Redis'],l:'https://url-shortener-lthf.onrender.com/'},
+  {t:'Mini Redis: In-Memory Key-Value Store',y:'Self',by:'Jan 2026',b:['TCP server implementing a simplified Redis clone.','Custom hash map and LRU eviction built from a doubly linked list and a hash map.'],g:['C++','TCP','Data structures'],l:'https://mini-redis-2on1.onrender.com/'},
+  {t:'Library Management System',y:'Self',by:'Apr 2025',b:['Object-oriented design with modular classes for books, members and transactions.','Issue/return tracking and fine calculation through inheritance and polymorphism.'],g:['OOP','C++'],l:'https://harsha-library-management-nzc490fwo-pirate2.vercel.app/'}
  ]},
  {name:'Data & ML',bg:'var(--lime)',blurb:'Vision, NLP and LLM pipelines.',p:[
   {t:'AI-Based PPE Compliance Detection',y:'Course',by:'Prof. G. L. Samuel · 2026',w:1,b:['End-to-end computer vision pipeline that detects PPE violations and tracks workers in real time.','Automated logging, debouncing and analytics to cut false positives.'],g:['YOLOv8','OpenCV','Tracking']},
@@ -424,7 +425,7 @@ const T=[
 //
  ]}
 ];
-document.getElementById('ptracks').innerHTML=T.map(tr=>'<div class="track"><div class="th"><h3 style="background:'+tr.bg+'">'+esc(tr.name)+'</h3><p>'+esc(tr.blurb)+'</p><span class="n">'+tr.p.length+' projects</span></div><div class="pg">'+tr.p.map(p=>'<article class="box pc"><div class="meta"><span class="pill" style="background:'+TY[p.y]+'">'+p.y+'</span><span class="by">'+esc(p.by)+'</span>'+(p.w?'<span class="wip">in progress</span>':'')+'</div><h3>'+esc(p.t)+'</h3>'+(p.k?'<span class="kpi" style="background:'+tr.bg+'">'+esc(p.k)+'</span>':'')+'<ul>'+p.b.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><div class="tags">'+p.g.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div></article>').join('')+'</div></div>').join('');
+document.getElementById('ptracks').innerHTML=T.map(tr=>'<div class="track"><div class="th"><h3 style="background:'+tr.bg+'">'+esc(tr.name)+'</h3><p>'+esc(tr.blurb)+'</p><span class="n">'+tr.p.length+' projects</span></div><div class="pg">'+tr.p.map(p=>'<article class="box pc"><div class="meta"><span class="pill" style="background:'+TY[p.y]+'">'+p.y+'</span><span class="by">'+esc(p.by)+'</span>'+(p.w?'<span class="wip">in progress</span>':'')+'</div><h3>'+esc(p.t)+'</h3>'+(p.k?'<span class="kpi" style="background:'+tr.bg+'">'+esc(p.k)+'</span>':'')+'<ul>'+p.b.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+(p.l?'<a class="btn go live" href="'+esc(p.l)+'" target="_blank" rel="noopener">Live demo ↗</a>':'')+'<div class="tags">'+p.g.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div></article>').join('')+'</div></div>').join('');
 
 const Y=[
  {y:'2026 →',s:'Fourth year',r:[
